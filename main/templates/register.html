@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<style>
+h2{
+font-size:26px;
+margin-bottom:20px;
+color:#035741;
+}
+</style>
+  
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="login-card">
+
+        <h2>Create Account</h2>
+
+        <form method="POST" action="/register">
+
+            <input type="text" name="name" placeholder="Full Name" required>
+            <br><br>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+            <br><br>
+
+            <input type="password" name="password" placeholder="Password" onkeyup="checkRegisterPassword()" required>
+            <br><br>
+            <div id="registerStrength"></div>
+            
+            <select name="role">
+                <option value="User">User</option>
+                <option value="Business">Business</option>
+            </select>
+            
+            <br><br>
+           
+            
+            <button type="submit">Register</button>
+
+        </form>
+        
+
+        <p>
+             <h19 style="color: black;"> Already have an account?</h19>
+           
+            <a href="/login">Login here</a>
+        </p>
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+h2{
+font-size:26px;
+margin-bottom:20px;
+color:#035741;
+}
+  
+            
+</style>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="login-card">
+
+        <h2 id="loginTitle">Login</h2>
+        <br>
+        
+        <form id="loginForm" method="POST" action="/login">
+            <select name="role">
+                <option value="User">User</option>
+                <option value="Business">Business</option>
+            </select>
+             <br><br>
+           <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <br><br>
+
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <br><br>
+
+            
+            <div id="strength"></div>
+            <label>
+                <input type="checkbox" name="remember">
+                <h19 style="color: black;">Remember me </h19>
+            </label>
+            </br> </br>
+
+
+
+            <button type="submit">Login</button>
+
+        </form>
+        <br>
+
+        <p>
+            <a href="/register">Create account</a> |
+            <a href="/forgot">Forgot password?</a>
+        </p>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+document.getElementById("loginForm")?.addEventListener("submit", function(e){
+    const password = document.getElementById("password").value;
+
+    if(password.length < 6){
+        e.preventDefault();
+        alert("Weak password");
+    }
+});
+</script>
+</body>
+</html>
