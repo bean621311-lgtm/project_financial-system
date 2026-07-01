@@ -16,6 +16,7 @@ from datetime import datetime
 from models.income import Income
 from models.expense import Expense
 from models.budget import Budget
+from services.loan_service import get_loans
 dashboard_blueprint = Blueprint( "dashboard",__name__)
 
 @dashboard_blueprint.route("/user_dashboard")
@@ -288,3 +289,88 @@ def get_budget_route():
         "status": status
 
     })
+@dashboard_blueprint.route(
+    "/create_loan",
+    methods=["POST"]
+)
+def create_loan_route():
+
+    if "user_id" not in session:
+        return jsonify({
+            "message": "Login required"
+        }), 401
+
+    try:
+
+        loan = create_loan(
+
+            session["user_id"],
+
+            request.form["loan_name"],
+
+            request.form["loan_provider"],
+
+            float(request.form["principal_amount"]),
+
+            float(request.form["interest_rate"]),
+
+            int(request.form["duration_months"]),
+
+            request.form["start_date"],
+
+            int(request.form["due_day"]),
+
+            request.form.get("remarks", "")
+
+        )
+
+        return jsonify({
+
+            "success": True,
+
+            "message": "Loan Created Successfully",
+
+            "loan_id": loan.loan_id,
+
+            "emi": loan.emi_amount,
+
+            "total_interest": loan.total_interest,
+
+            "total_payable": loan.total_payable
+
+        })
+
+    except Exception as e:
+
+        return jsonify({
+
+            "success": False,
+
+            "message": str(e)
+
+        }), 500
+@dashboard_blueprint.route("/get_loans")
+def get_loans_route():
+
+    if "user_id" not in session:
+        return jsonify([])
+
+    loans = get_loans(
+        session["user_id"]
+    )
+
+    data = []
+
+    for loan in loans:
+
+        data.append({
+
+            "loan_id": loan.loan_id,
+
+            "loan_name": loan.loan_name,
+
+            "emi_amount": loan.emi_amount
+
+        })
+
+    return jsonify(data)

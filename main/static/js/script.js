@@ -338,3 +338,124 @@ if (budgetForm) {
     });
 
 }
+function showLoanCard(){
+
+    document.getElementById(
+        "loanCard"
+    ).style.display = "block";
+
+    document.getElementById(
+        "emiCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "historyCard"
+    ).style.display = "none";
+}
+function showEMICard(){
+
+    document.getElementById(
+        "loanCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "emiCard"
+    ).style.display = "block";
+
+    document.getElementById(
+        "historyCard"
+    ).style.display = "none";
+
+    loadLoans();
+}
+function showHistoryCard(){
+
+    document.getElementById(
+        "loanCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "emiCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "historyCard"
+    ).style.display = "block";
+}
+const loanForm =
+    document.getElementById("loanForm");
+
+if(loanForm){
+
+    loanForm.addEventListener(
+        "submit",
+        function(e){
+
+        e.preventDefault();
+
+        let formData =
+            new FormData(this);
+
+        fetch("/create_loan",{
+
+            method:"POST",
+
+            body:formData
+
+        })
+
+        .then(res=>res.json())
+
+        .then(data=>{
+
+            alert(
+                data.message +
+                "\nEMI: Rs " +
+                data.emi
+            );
+
+            this.reset();
+
+            loadLoans();
+
+        });
+
+    });
+
+}
+function loadLoans(){
+
+    let select =
+        document.getElementById(
+            "loanSelect"
+        );
+
+    if(!select) return;
+
+    fetch("/get_loans")
+
+    .then(res=>res.json())
+
+    .then(data=>{
+
+        select.innerHTML =
+        '<option value="">Select Loan</option>';
+
+        data.forEach(loan=>{
+
+            select.innerHTML += `
+
+            <option value="${loan.loan_id}">
+
+                ${loan.loan_name}
+                (EMI Rs ${loan.emi_amount})
+
+            </option>
+
+            `;
+
+        });
+
+    });
+
+}

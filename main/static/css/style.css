@@ -779,3 +779,112 @@ progress{
     font-weight:bold;
 
 }
+/* ========================= */
+/* LOAN MODULE */
+/* ========================= */
+
+.loan-menu{
+    text-align:center;
+    margin-top:20px;
+}
+
+.loan-menu h1{
+    color:white;
+    margin-bottom:25px;
+}
+
+.loan-options{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.loan-options button{
+
+    width:220px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.loan-options button:hover{
+
+    background:#1d4ed8;
+
+    transform:scale(1.05);
+
+}
+
+.loan-card{
+
+    width:450px;
+
+    background:white;
+
+    color:black;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+    text-align:center;
+
+}
+
+.loan-card input,
+.loan-card select{
+
+    width:95%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+}
+
+.loan-card button{
+
+    width:95%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+.loan-card button:hover{
+
+    background:#1d4ed8;
+
+}

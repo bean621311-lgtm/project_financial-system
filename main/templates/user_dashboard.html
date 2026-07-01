@@ -40,6 +40,10 @@
      onclick="showModule('budget',this)">
      Monthly Budget
 </div>
+<div class="nav-item"
+     onclick="showModule('loan',this)">
+     Loan & EMI
+</div>
 
 <div class="nav-item"
      onclick="showModule('statement',this)">
@@ -348,7 +352,162 @@
 
     </section>
 
-    
+  
+
+
+<section id="loanModule" class="module">
+
+    <div class="loan-menu">
+
+        <h1>🏦 Loan Center</h1>
+
+        <div class="loan-options">
+
+            <button onclick="showLoanCard()">
+                ➕ Create Loan
+            </button>
+
+            <button onclick="showEMICard()">
+                💳 Pay EMI
+            </button>
+
+            <button onclick="showHistoryCard()">
+                📜 Loan History
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div
+            class="loan-card"
+            id="loanCard"
+            style="display:none;">
+
+            <h2 style="color:#3152be;">
+                Create Loan
+            </h2>
+
+            <form id="loanForm">
+
+                <input
+                    type="text"
+                    name="loan_name"
+                    placeholder="Loan Name"
+                    required>
+
+                <input
+                    type="text"
+                    name="loan_provider"
+                    placeholder="Loan Provider"
+                    required>
+
+                <input
+                    type="number"
+                    name="principal_amount"
+                    placeholder="Principal Amount"
+                    required>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    name="interest_rate"
+                    placeholder="Flat Interest Rate (%)"
+                    required>
+
+                <input
+                    type="number"
+                    name="duration_months"
+                    placeholder="Duration (Months)"
+                    required>
+
+                <input
+                    type="date"
+                    name="start_date"
+                    required>
+
+                <input
+                    type="number"
+                    name="due_day"
+                    placeholder="EMI Due Day (1-31)"
+                    min="1"
+                    max="31"
+                    required>
+
+                <input
+                    type="text"
+                    name="remarks"
+                    placeholder="Remarks (Optional)">
+
+                <button type="submit">
+
+                    Create Loan
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <div
+            class="loan-card"
+            id="emiCard"
+            style="display:none;">
+
+            <h2 style="color:#3152be;">
+                Pay EMI
+            </h2>
+
+            <form id="emiForm">
+
+                <select
+                    id="loanSelect"
+                    name="loan_id">
+
+                    <option value="">
+                        Select Loan
+                    </option>
+
+                </select>
+
+                <input
+                    type="number"
+                    name="payment_amount"
+                    placeholder="Payment Amount"
+                    required>
+
+                <button type="submit">
+
+                    Pay EMI
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div
+            class="loan-card"
+            id="historyCard"
+            style="display:none;">
+
+            <h2 style="color:#3152be;">
+                Loan History
+            </h2>
+
+            <div id="loanHistoryList">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
     
   <!-- Statement -->
