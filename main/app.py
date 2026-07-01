@@ -6,6 +6,7 @@ from config import Config
 from routes.home import home_blueprint
 from routes.dashboard import dashboard_blueprint
 from datetime import datetime
+from utils.email_validation import is_valid_email
 app = Flask(__name__)
 
 app.config.from_object(Config)
