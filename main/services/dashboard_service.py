@@ -8,22 +8,30 @@ from datetime import datetime
 
 def get_dashboard_data(user_id):
 
+    month = datetime.now().month
+    year = datetime.now().year
+
+    
     total_income = db.session.query(
         func.sum(Income.amount)
-    ).filter_by(
-        user_id=user_id
+    ).filter(
+        Income.user_id == user_id,
+        func.extract("month", Income.date) == month,
+        func.extract("year", Income.date) == year
     ).scalar() or 0
 
     total_expense = db.session.query(
         func.sum(Expense.amount)
-    ).filter_by(
-        user_id=user_id
+    ).filter(
+        Expense.user_id == user_id,
+        func.extract("month", Expense.date) == month,
+        func.extract("year", Expense.date) == year
     ).scalar() or 0
 
     total_savings = db.session.query(
         func.sum(Savings.saved_amount)
-    ).filter_by(
-        user_id=user_id
+    ).filter(
+        Savings.user_id == user_id
     ).scalar() or 0
 
     total_goals = Savings.query.filter(

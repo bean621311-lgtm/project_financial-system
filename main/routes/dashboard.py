@@ -45,7 +45,7 @@ def dashboard_data():
 
     if "user_id" not in session:
         return jsonify({})
-
+    print(datetime.now())
     data = get_dashboard_data(
         session["user_id"]
     )
