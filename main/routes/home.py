@@ -3,6 +3,7 @@ from flask import Flask, render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from database.db import db
 from models.user import Users
+
 import bcrypt
 home_blueprint = Blueprint("home",__name__)
 
@@ -73,32 +74,21 @@ def login():
                 return "Wrong role selected."
 
             session["user_id"] = user.user_id
+            
             session["user_email"] = user.email
             session["user_role"] = user.role
+            session["user_name"] = getattr(user, "name", user.email)
+            
 
             if user.role == "Business":
-                return redirect(url_for("home.business_dashboard"))
+                return redirect(url_for("dashboard.business_dashboard"))
             else:
-                return redirect(url_for("home.user_dashboard"))
+                return redirect(url_for("dashboard.user_dashboard"))
         return "Invalid Email or Password"
 
     return render_template("login.html")
 
-@home_blueprint.route("/user_dashboard")
-def user_dashboard():
-    if "user_id" not in session:
-        return redirect(url_for("home.login"))
 
-    return render_template(
-        "user_dashboard.html",
-        user=session.get("user_email")
-    )
-@home_blueprint.route("/business_dashboard")
-def business_dashboard():
-    if "user_id" not in session:
-        return redirect(url_for("home.login"))
-
-    return render_template("business_dashboard.html")
        
 
 @home_blueprint.route("/forgot")

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BizFlow Dashboard</title>
+  <title>Individuals Dashboard</title>
   <link rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -11,16 +11,18 @@
 <h3>Welcome {{ user }}</h3>
 <aside class="sidebar">
   <div class="logo">
-    <h2>BizFlow</h2>
-    <p>Management Suite</p>
+    <h2>FinMgmt</h2>
+    <p>Management </p>
   </div>
 
   <nav>
     <div class="nav-item active" onclick="showModule('dashboard', this)">⊞ Dashboard</div>
-
-    <div class="nav-item" onclick="showModule('inventory', this)">📦 Inventory</div>
+    
     <div class="nav-item" onclick="showModule('expenses', this)">💸 Expenses</div>
- 
+    <div class="nav-item" onclick="showModule('customers', this)">👥 Customers</div>
+    
+    <div class="nav-item" onclick="showModule('reports', this)">📊 Financial Reports</div>
+    <div class="nav-item" onclick="showModule('prediction', this)">🔮 Sales Prediction</div>
     <div class="nav-item" onclick="showModule('settings', this)">⚙️ Settings</div>
     <a href="{{ url_for('home.logout') }}">
         <div class="nav-item logout">🚪 Logout</div>
@@ -41,9 +43,10 @@
     </header>
 
     <section class="cards">
-     
+      <div class="card blue"><p>Total Sales</p><h2 id="dashSales">Rs 0</h2><span>Overall sales</span></div>
       <div class="card green"><p>Total Profit</p><h2 id="dashProfit">Rs 0</h2><span>Sales minus expenses</span></div>
-  
+      <div class="card purple"><p>Inventory Items</p><h2 id="dashInventory">0</h2><span>Total products</span></div>
+      <div class="card red"><p>Low Stock Alert</p><h2 id="dashLowStock">0</h2><span>Needs reorder</span></div>
     </section>
 
     <section class="grid">
@@ -55,7 +58,9 @@
       <div class="panel">
         <div class="panel-head"><h3>Quick Actions</h3></div>
         <div class="list-box">
-          
+          <button onclick="openModule('sales')">Add Sale</button>
+          <button onclick="openModule('inventory')">Add Product</button>
+          <button onclick="openModule('expenses')">Add Expense</button>
           <button onclick="openModule('reports')">View Reports</button>
         </div>
       </div>

@@ -4,7 +4,8 @@ from database.db import db
 from models.user import Users
 from config import Config
 from routes.home import home_blueprint
-
+from routes.dashboard import dashboard_blueprint
+from datetime import datetime
 app = Flask(__name__)
 
 app.config.from_object(Config)
@@ -19,9 +20,16 @@ app.config.from_object(Config)
 db.init_app(app)
 
 with app.app_context():
+        from models.user import Users
+        from models.income import Income
+        from models.expense import Expense
+        from models.savings import Savings
+        from models.statement import Statement
+       
         db.create_all()
 
 app.register_blueprint(home_blueprint)
+app.register_blueprint(dashboard_blueprint)
 
 if __name__ == "__main__":
     app.run(debug=True)
