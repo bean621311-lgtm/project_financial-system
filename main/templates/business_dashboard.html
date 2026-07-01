@@ -16,18 +16,28 @@
   </div>
 
   <nav>
-    <div class="nav-item active" onclick="showModule('dashboard', this)">⊞ Dashboard</div>
-    
+    <div class="nav-item active" onclick="showModule('dashboard', this)">🏠 Dashboard</div>
+
+    <div class="nav-item" onclick="showModule('sales', this)">🧾 Sales</div>
+
+    <div class="nav-item" onclick="showModule('inventory', this)">📦 Inventory</div>
+
     <div class="nav-item" onclick="showModule('expenses', this)">💸 Expenses</div>
+
     <div class="nav-item" onclick="showModule('customers', this)">👥 Customers</div>
-    
+
+    <div class="nav-item" onclick="showModule('suppliers', this)">🚚 Suppliers</div>
+
     <div class="nav-item" onclick="showModule('reports', this)">📊 Financial Reports</div>
+
     <div class="nav-item" onclick="showModule('prediction', this)">🔮 Sales Prediction</div>
+
     <div class="nav-item" onclick="showModule('settings', this)">⚙️ Settings</div>
+
     <a href="{{ url_for('home.logout') }}">
         <div class="nav-item logout">🚪 Logout</div>
     </a>
-  </nav>
+</nav>
 </aside>
 
 <main class="main">
