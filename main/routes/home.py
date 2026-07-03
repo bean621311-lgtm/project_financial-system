@@ -3,7 +3,10 @@ from flask import Flask, render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from database.db import db
 from models.user import Users
-
+from flask import request
+from services.email_validation import validate_user_email
+from services.email_service import send_email
+from services.token_service import generate_verification_token
 import bcrypt
 home_blueprint = Blueprint("home",__name__)
 
@@ -101,4 +104,101 @@ def forgot():
 @home_blueprint.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("home.login"))
+    return redirect(url_for("home.login")) 
+
+
+
+
+email = request.form["email"]
+
+valid, result = validate_user_email(email)
+
+if not valid:
+    return {"message": result}
+
+token = generate_verification_token(email)
+
+verification_link = f"http://localhost:5000/verify/{token}"
+
+send_email(
+
+    "Verify Your Account",
+
+    email,
+
+    f"""
+Welcome!
+
+Click below to verify your account.
+
+{verification_link}
+
+If you didn't create this account, ignore this email.
+"""
+)
+
+@app.route("/verify/<token>")
+
+def verify(token):
+
+    email = verify_verification_token(token)
+
+    if not email:
+        return "Invalid Link"
+
+    user = User.query.filter_by(email=email).first()
+
+    user.is_verified = True
+
+    db.session.commit()
+
+    return "Email Verified Successfully!"
+
+token = serializer.dumps(email, salt="reset-password")
+
+reset_link = f"http://localhost:5000/reset-password/{token}"
+
+
+token = serializer.dumps(email, salt="reset-password")token = serializer.dumps(email, salt="reset-password")
+send_email(
+
+    "Reset Password",
+
+    email,
+
+    f"""
+Click below to reset your password.
+
+{reset_link}
+
+This link expires in 1 hour.
+"""
+)
+
+@app.route("/reset-password/<token>", methods=["GET","POST"])
+
+def reset_password(token):
+
+    try:
+
+        email = serializer.loads(
+            token,
+            salt="reset-password",
+            max_age=3600
+        )
+
+    except:
+
+        return "Invalid Link"
+
+    if request.method == "POST":
+
+        new_password = request.form["password"]
+
+        user = User.query.filter_by(email=email).first()
+
+        user.password = bcrypt.generate_password_hash(new_password).decode("utf-8")
+
+        db.session.commit()
+
+        return "Password Updated Successfully"
