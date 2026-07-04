@@ -16,7 +16,12 @@ from datetime import datetime
 from models.income import Income
 from models.expense import Expense
 from models.budget import Budget
-from services.loan_service import get_loans
+from services.loan_service import (create_loan,
+    get_loans,
+    get_loan,
+    delete_loan,
+
+)
 dashboard_blueprint = Blueprint( "dashboard",__name__)
 
 @dashboard_blueprint.route("/user_dashboard")

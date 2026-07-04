@@ -92,6 +92,7 @@ def get_loans(user_id):
 
 
 def get_loan(loan_id):
+    
 
     return Loan.query.get(loan_id)
 

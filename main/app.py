@@ -34,16 +34,3 @@ app.register_blueprint(dashboard_blueprint)
 
 if __name__ == "__main__":
     app.run(debug=True)
-from flask import Flask
-from flask_mail import Mail
-
-mail = Mail()
-
-def create_app():
-
-    app = Flask(__name__)
-    app.config.from_object("config.Config")
-
-    mail.init_app(app)
-
-    return app

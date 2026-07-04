@@ -3,15 +3,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-    import os
+  
 
-class Config:
-
-    SECRET_KEY = "your-secret-key"
-
-    MAIL_SERVER = "smtp.gmail.com"
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = "yourgmail@gmail.com"
-    MAIL_PASSWORD = "YOUR_GMAIL_APP_PASSWORD"
-    MAIL_DEFAULT_SENDER = "yourgmail@gmail.com"
