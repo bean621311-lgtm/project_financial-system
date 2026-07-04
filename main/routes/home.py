@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from database.db import db
 from models.user import Users
 from flask import request
-#from services.email_validation import validate_user_email
+from services.email_validation import validate_user_email
 
 #from services.token_service import generate_verification_token
 import bcrypt
@@ -97,6 +97,8 @@ def login():
 @home_blueprint.route("/forgot")
 def forgot():
     return "Forgot Password Page"
+    
+@home_blueprint.route("/forgot-password", methods=["GET","POST"])
 
 
    
@@ -107,3 +109,23 @@ def logout():
     return redirect(url_for("home.login")) 
 
 
+@home_blueprint.route("/register", methods=["GET","POST"])
+def register():
+    email = request.form.get("email")
+    name = request.form.get("name")
+email = request.form.get("email")
+password = request.form.get("password")
+role = request.form.get("role")
+
+valid, message = validate_user_email(email)
+
+if not valid:
+    return message
+    
+@home_blueprint.route("/verify/<token>")
+def verify(token):
+    
+
+
+
+    
