@@ -184,9 +184,7 @@ document.getElementById("expenseForm")
 
 });
 
-// =======================
-// CREATE GOAL
-// =======================
+
 const goalForm = document.getElementById("goalForm");
 
 if (goalForm) {
@@ -214,9 +212,7 @@ if (goalForm) {
 }
 
 
-// =======================
-// ADD MONEY TO SAVINGS
-// =======================
+
 const savingAmountForm =
     document.getElementById("savingAmountForm");
 
@@ -245,9 +241,7 @@ if (savingAmountForm) {
 }
 
 
-// =======================
-// LOAD GOALS IN DROPDOWN
-// =======================
+
 function loadSavingsDropdown() {
 
     let select =
@@ -459,6 +453,7 @@ function loadLoans(){
     });
 
 }
+
 const emiForm = document.getElementById("emiForm");
 
 if (emiForm) {
@@ -488,6 +483,242 @@ if (emiForm) {
             loadDashboard();
 
             this.reset();
+        });
+    });
+}
+/*business module*/
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    animateCounters();
+
+    initializeChart();
+
+    notificationAnimation();
+
+    buttonEffects();
+
+});
+
+
+/* ==========================================
+        ANIMATED COUNTERS
+========================================== */
+
+function animateCounters() {
+
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+
+        const target = +counter.getAttribute("data-target");
+
+        let count = 0;
+
+        const speed = target / 100;
+
+        function updateCounter() {
+
+            if (count < target) {
+
+                count += speed;
+
+                counter.innerText = Math.ceil(count).toLocaleString();
+
+                requestAnimationFrame(updateCounter);
+
+            } else {
+
+                counter.innerText = target.toLocaleString();
+
+            }
+
+        }
+
+        updateCounter();
+
+    });
+
+}
+
+
+
+
+function initializeChart() {
+
+    const ctx = document.getElementById("salesExpenseChart");
+
+    if (!ctx) return;
+
+    new Chart(ctx, {
+
+        type: "line",
+
+        data: {
+
+            labels: [
+
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+
+            ],
+
+            datasets: [
+
+                {
+
+                    label: "Sales",
+
+                    data: [
+
+                        12000,
+                        18000,
+                        15000,
+                        24000,
+                        26000,
+                        30000,
+                        32000,
+                        35000,
+                        37000,
+                        39000,
+                        41000,
+                        45000
+
+                    ],
+
+                    borderColor: "#10B981",
+
+                    backgroundColor: "rgba(16,185,129,.15)",
+
+                    fill: true,
+
+                    tension: .4,
+
+                    borderWidth: 3
+
+                },
+
+                {
+
+                    label: "Expenses",
+
+                    data: [
+
+                        7000,
+                        9000,
+                        11000,
+                        13000,
+                        14000,
+                        16000,
+                        17000,
+                        18000,
+                        19000,
+                        20000,
+                        22000,
+                        24000
+
+                    ],
+
+                    borderColor: "#EF4444",
+
+                    backgroundColor: "rgba(239,68,68,.15)",
+
+                    fill: true,
+
+                    tension: .4,
+
+                    borderWidth: 3
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    position: "top"
+
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
+
+
+
+
+function notificationAnimation() {
+
+    const bell = document.querySelector(".notification-btn");
+
+    if (!bell) return;
+
+    setInterval(() => {
+
+        bell.classList.add("bell-animation");
+
+        setTimeout(() => {
+
+            bell.classList.remove("bell-animation");
+
+        }, 700);
+
+    }, 5000);
+
+}
+
+
+
+
+function buttonEffects() {
+
+    const buttons = document.querySelectorAll(".quick-actions .btn");
+
+    buttons.forEach(btn => {
+
+        btn.addEventListener("mouseenter", () => {
+
+            btn.style.transform = "scale(1.05)";
+
+        });
+
+        btn.addEventListener("mouseleave", () => {
+
+            btn.style.transform = "scale(1)";
 
         });
 
