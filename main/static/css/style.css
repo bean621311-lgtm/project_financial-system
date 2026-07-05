@@ -683,100 +683,90 @@ body.light-mode .check-row {
 }
 
 
+/* ==========================
+   BUDGET MODULE
+========================== */
+
 .budget-menu{
     text-align:center;
-    margin-top:20px;
+    margin-bottom:30px;
 }
 
 .budget-menu h1{
-    color:white;
-    margin-bottom:25px;
+    color:#ffffff;
+    margin-bottom:20px;
 }
 
-
-
+.budget-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
 
 .budget-card{
-
     width:420px;
-
-    background:white;
-
-    color:black;
-
+    background:#ffffff;
+    color:#111827;
     padding:35px;
-
     border-radius:20px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.20);
-
+    box-shadow:0 8px 20px rgba(0,0,0,0.20);
     text-align:center;
-
 }
+
+.budget-card h2{
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
 .budget-card input,
 .budget-card select{
-
-    width:95%;
-
+    width:100%;
     padding:12px;
-
     margin:10px 0;
-
-    border:1px solid #ccc;
-
+    border:1px solid #d1d5db;
     border-radius:10px;
-
     outline:none;
-
-}
-.budget-card button{
-
-    width:95%;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#2563eb;
-
-    color:white;
-
-    cursor:pointer;
-
     font-size:15px;
+}
 
+.budget-card button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:#ffffff;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
     transition:.3s;
-
 }
 
 .budget-card button:hover{
-
     background:#1d4ed8;
-
 }
 
 progress{
-
     width:100%;
-
-    height:25px;
-
-    border-radius:20px;
-
+    height:22px;
+    margin-top:15px;
 }
+
 #budgetStatus{
-
-    text-align:center;
-
-    font-size:22px;
-
     margin-top:20px;
-
-    color:green;
-
+    font-size:20px;
     font-weight:bold;
+    color:#16a34a;
+}
+
+@media(max-width:768px){
+
+    .budget-card{
+        width:95%;
+        padding:25px;
+    }
 
 }
 /* ========================= */

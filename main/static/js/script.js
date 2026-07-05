@@ -459,3 +459,38 @@ function loadLoans(){
     });
 
 }
+const emiForm = document.getElementById("emiForm");
+
+if (emiForm) {
+
+    emiForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let formData = new FormData(this);
+
+        fetch("/pay_emi",{
+
+            method:"POST",
+
+            body:formData
+
+        })
+
+        .then(res=>res.json())
+
+        .then(data=>{
+
+            alert(data.message);
+
+            loadLoans();
+
+            loadDashboard();
+
+            this.reset();
+
+        });
+
+    });
+
+}

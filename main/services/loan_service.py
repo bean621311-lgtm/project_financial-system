@@ -115,3 +115,33 @@ def delete_loan(loan_id):
     db.session.commit()
 
     return True
+
+
+def pay_emi(loan_id, payment_amount):
+
+    loan = Loan.query.get(loan_id)
+
+    if not loan:
+        return False
+
+    payment_amount = float(payment_amount)
+
+    payment = EMIPayment(
+        loan_id=loan.loan_id,
+        payment_date=datetime.now(),
+        amount_paid=payment_amount
+    )
+
+    db.session.add(payment)
+
+    loan.outstanding_balance -= payment_amount
+    loan.remaining_emi -= 1
+
+    if loan.remaining_emi <= 0 or loan.outstanding_balance <= 0:
+        loan.status = "Completed"
+        loan.outstanding_balance = 0
+        loan.remaining_emi = 0
+
+    db.session.commit()
+
+    return True

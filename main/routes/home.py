@@ -18,6 +18,7 @@ def home():
 
 @home_blueprint.route("/register", methods=["GET", "POST"])
 def register():
+
     if request.method == "POST":
 
         name = request.form.get("name")
@@ -29,6 +30,12 @@ def register():
             return "Missing fields"
 
         print("DATA RECEIVED:", name, email)
+
+        
+        valid, message = validate_user_email(email)
+
+        if not valid:
+            return message
 
         existing_user = Users.query.filter_by(email=email).first()
         if existing_user:
@@ -109,23 +116,9 @@ def logout():
     return redirect(url_for("home.login")) 
 
 
-@home_blueprint.route("/register", methods=["GET","POST"])
-def register():
-    email = request.form.get("email")
-    name = request.form.get("name")
-email = request.form.get("email")
-password = request.form.get("password")
-role = request.form.get("role")
-
-valid, message = validate_user_email(email)
-
-if not valid:
-    return message
+    
     
 @home_blueprint.route("/verify/<token>")
 def verify(token):
-    
-
-
-
-    
+    message = verify_email(token)
+    return message

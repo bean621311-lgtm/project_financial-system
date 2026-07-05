@@ -20,6 +20,7 @@ from services.loan_service import (create_loan,
     get_loans,
     get_loan,
     delete_loan,
+    pay_emi
 
 )
 dashboard_blueprint = Blueprint( "dashboard",__name__)
@@ -379,3 +380,25 @@ def get_loans_route():
         })
 
     return jsonify(data)
+
+@dashboard_blueprint.route("/pay_emi", methods=["POST"])
+def pay_emi_route():
+
+    if "user_id" not in session:
+        return jsonify({
+            "message": "Login required"
+        }), 401
+
+    success = pay_emi(
+        request.form["loan_id"],
+        request.form["payment_amount"]
+    )
+
+    if success:
+        return jsonify({
+            "message": "EMI Paid Successfully"
+        })
+
+    return jsonify({
+        "message": "Payment Failed"
+    }), 400
