@@ -1,810 +1,1067 @@
-.page {
-    display: none;
-}
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
-.page.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-body {
-
+*{
     margin:0;
-    
- 
-  
-  
-    background-position:center;
-    min-height:100vh;
-    background-size: cover;
-    
-    background-attachment: fixed;
-    color: white;
-
-    font-family: Arial;
-    background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-        url("/static/bg.jpg");
-    text-align: center;
-
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+               url("/static/bg.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#fff;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
 .about-container{
     display:flex;
     justify-content:space-evenly;
     align-items:flex-start;
     flex-wrap:wrap;
-    gap:40px;
-    padding:50px;
+    gap:35px;
+    padding:40px;
 }
 
 .about-box{
-    width:250px;
-    color:white;
+    width:260px;
 }
 
 .about-left{
-    width:350px;
+    width:380px;
 }
 
 .about-left h1{
     color:#00ffcc;
-    font-size:60px;
+    font-size:42px;
+    margin-bottom:15px;
 }
-.container {
-    margin-top: 50px;
-    
+
+.about{
+    line-height:1.8;
+    font-size:17px;
+}
+
+.overlay{
+    padding:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.container{
+    margin-top:30px;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-
-    
-}
-
-.login-card {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    margin: auto;
-    border-radius: 10px;
-}
-
-input, select {
-    width: 90%;
-    padding: 8px;
-    margin: 5px;
-}
-
-
-.overlay{
-padding:50px;
-text-align:center;
-max-width:1000px;
-margin:auto;
-}
-
-h1{
-font-size:50px;
-}
-
-.about{
-line-height:1.8;
-font-size:18px;
-}
-
-button{
-
-
-  background: rgba(79, 142, 247, 0.15);
-  color: #4f8ef7;
-  border: 1px solid rgba(79, 142, 247, 0.35);
-  padding: 10px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-
 }
 
 .login-box{
-width:400px;
-margin:80px auto;
-background:rgba(32, 59, 159, 0.449);
-color:black;
-padding:30px;
-border-radius:12px;
+    width:420px;
+    background:rgba(32,59,159,.45);
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.login-card{
+    width:340px;
+    background:#fff;
+    color:#111827;
+    padding:25px;
+    border-radius:12px;
+    margin:auto;
 }
 
 .account-types{
-display:flex;
-gap:10px;
-margin-bottom:20px;
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
 }
 
 .type-btn{
-flex:1;
-padding:10px;
+    flex:1;
 }
 
 .small-icon{
-font-size:14px;
-margin-right:5px;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    font-size:14px;
+    margin-right:5px;
 }
 
-.sidebar {
-  width: 240px;
-  background: #181c27;
-  border-right: 1px solid #262d3f;
-  height: 100vh;
-  position: fixed;
-  padding: 22px;
-  overflow-y: auto;
-}
+/* =========================================================
+   INPUTS
+========================================================= */
 
-.logo {
-  margin-bottom: 30px;
-}
-
-.logo h2 {
-  color: #4f8ef7;
-}
-
-.logo p {
-  color: #7a82a0;
-  font-size: 12px;
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.nav-item {
-  padding: 12px;
-  color: #7a82a0;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.nav-item:hover,
-.nav-item.active {
-  background: rgba(79, 142, 247, 0.15);
-  color: #4f8ef7;
-}
-
-.logout {
-  color: #f75f5f;
-}
-
-.main {
-  margin-left: 240px;
-  width: calc(100% - 240px);
-  padding: 24px;
-}
-
-.module {
-  display: none;
-}
-
-.active-module {
-  display: block;
-}
-
-.topbar {
-  background: #181c27;
-  border: 1px solid #262d3f;
-  border-radius: 16px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 22px;
-}
-
-.topbar p {
-  color: #7a82a0;
-  margin-top: 5px;
-}
-
-.top-actions {
-  display: flex;
-  gap: 12px;
+input,
+select{
+    width:100%;
+    height:42px;
+    padding:10px 14px;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    font-size:14px;
+    outline:none;
 }
 
 .main input,
-.main select {
-  background: #1e2333;
-  border: 1px solid #262d3f;
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  outline: none;
+.main select{
+    background:#1e2333;
+    color:white;
+    border:1px solid #30384b;
 }
 
-.topbar input {
-  width: 320px;
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button{
+    height:40px;
+    padding:0 18px;
+    border-radius:8px;
+    cursor:pointer;
+    border:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+    background:#2563eb;
+    color:#fff;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 22px;
+button:hover{
+    background:#1d4ed8;
 }
 
-.card {
-  background: #181c27;
-  border: 1px solid #262d3f;
-  border-radius: 16px;
-  padding: 22px;
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    width:220px;
+
+    height:100vh;
+
+    background:#181c27;
+
+    border-right:1px solid #2a3246;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    overflow-y:auto;
+
+    padding:18px;
+
 }
 
-.card p {
-  color: #7a82a0;
-  font-size: 13px;
+.logo{
+
+    margin-bottom:28px;
+
+    text-align:left;
+
 }
 
-.card h2 {
-  margin: 10px 0;
-  font-size: 26px;
+.logo h2{
+
+    color:#4f8ef7;
+
+    font-size:24px;
+
 }
 
-.card span {
-  font-size: 12px;
-  color: #7a82a0;
+.logo p{
+
+    color:#7a82a0;
+
+    font-size:12px;
+
+    margin-top:5px;
+
 }
 
-.blue { border-top: 4px solid #4f8ef7; }
-.green { border-top: 4px solid #22d3a5; }
-.purple { border-top: 4px solid #a78bfa; }
-.yellow { border-top: 4px solid #f7b84f; }
-.red { border-top: 4px solid #f75f5f; }
+nav{
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 18px;
-  margin-bottom: 22px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
 }
 
-.panel {
-  background: #181c27;
-  border: 1px solid #262d3f;
-  border-radius: 16px;
-  overflow: hidden;
+.nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    color:#b0b8d1;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
 }
 
-.panel-head {
-  padding: 16px 20px;
-  border-bottom: 1px solid #262d3f;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav-item:hover,
+
+.nav-item.active{
+
+    background:rgba(79,142,247,.15);
+
+    color:#4f8ef7;
+
 }
 
+.logout{
 
+    color:#ef4444;
 
-button:hover {
-  background: #4f8ef7;
-  color: white;
 }
 
-.form-grid {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main{
+
+    margin-left:220px;
+
+    width:calc(100% - 220px);
+
+    min-height:100vh;
+
+    padding:20px 28px;
+
+    max-width:1700px;
+
 }
 
-.single-form {
-  grid-template-columns: 1fr;
+.module{
+
+    display:none;
+
 }
 
-.form-grid div {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.active-module{
+
+    display:block;
+
 }
 
-.form-grid label {
-  font-size: 13px;
-  color: #7a82a0;
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+
+    background:#181c27;
+
+    border:1px solid #2a3246;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 22px;
+
+    margin-bottom:22px;
+
 }
 
-.form-grid button {
-  grid-column: span 2;
+.topbar h2{
+
+    font-size:24px;
+
 }
 
-.single-form button {
-  grid-column: span 1;
+.topbar p{
+
+    color:#7a82a0;
+
+    margin-top:5px;
+
+    font-size:14px;
+
 }
 
-.invoice-box,
-.history-box {
-  padding: 20px;
-  min-height: 260px;
-  background: #111827;
-  margin: 20px;
-  border-radius: 14px;
-  border: 1px dashed #4f8ef7;
+.top-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
 }
 
-.invoice-box h2,
-.history-box h2 {
-  color: #4f8ef7;
-  margin-bottom: 15px;
+.topbar input{
+
+    width:260px;
+
 }
 
-.invoice-row,
-.history-row,
-.report-row,
-.performance-row,
-.alert-row,
-.loyalty-row,
-.record-row,
-.expense-row,
-.trend-row,
-.settings-row,
-.supplier-performance-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:18px;
+
+    margin-bottom:22px;
+
 }
 
-.invoice-total,
-.history-total {
-  border-top: 1px solid #262d3f;
-  margin-top: 15px;
-  padding-top: 15px;
-  font-size: 20px;
-  color: #22d3a5;
-  font-weight: bold;
+.card{
+
+    background:#181c27;
+
+    border:1px solid #2a3246;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    min-height:120px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    transition:.3s;
+
 }
 
-.full-btn {
-  margin: 0 20px 20px;
-  width: calc(100% - 40px);
+.card:hover{
+
+    transform:translateY(-4px);
+
 }
 
-canvas {
-  width: 100%;
-  height: 280px;
-  padding: 20px;
+.card p{
+
+    color:#9ca3af;
+
+    font-size:13px;
+
 }
 
-.performance-item,
-.alert-item,
-.loyalty-item,
-.record-item,
-.supplier-performance-item,
-.expense-item,
-.trend-item {
-  padding: 16px 20px;
-  border-bottom: 1px solid rgba(38, 45, 63, 0.7);
+.card h2{
+
+    font-size:22px;
+
+    margin:10px 0;
+
 }
 
-.alert-item strong {
-  color: #f75f5f;
+.card span{
+
+    color:#9ca3af;
+
+    font-size:12px;
+
 }
 
-.empty-message {
-  padding: 20px;
-  color: #7a82a0;
+.blue{
+
+    border-top:4px solid #4f8ef7;
+
 }
 
-.bar {
-  height: 7px;
-  background: #1e2333;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 8px;
+.green{
+
+    border-top:4px solid #22d3a5;
+
 }
 
-.fill {
-  height: 100%;
-  background: #4f8ef7;
-  border-radius: 20px;
+.purple{
+
+    border-top:4px solid #a78bfa;
+
 }
 
-.report-list {
-  padding: 10px 0;
+.yellow{
+
+    border-top:4px solid #f7b84f;
+
 }
 
-.report-row {
-  padding: 16px 20px;
-  border-bottom: 1px solid rgba(38,45,63,0.7);
+.red{
+
+    border-top:4px solid #ef4444;
+
+}
+/* =========================================================
+   GRID LAYOUT
+========================================================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    margin-bottom:25px;
+    align-items:start;
 }
 
-.report-row span {
-  color: #7a82a0;
+.full-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+/* =========================================================
+   PANEL DESIGN
+========================================================= */
+
+.panel{
+    background:#181c27;
+    border:1px solid #2d3748;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
-th,
-td {
-  padding: 14px 18px;
-  text-align: left;
-  border-bottom: 1px solid rgba(38,45,63,0.7);
+.panel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+    border-bottom:1px solid #2d3748;
+    background:#1d2433;
 }
 
-th {
-  color: #7a82a0;
-  font-size: 12px;
+.panel-head h3{
+    color:#ffffff;
+    font-size:18px;
+    font-weight:600;
 }
 
-td {
-  font-size: 14px;
+.panel-head span{
+    color:#9ca3af;
+    font-size:13px;
 }
 
-.badge {
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
+/* =========================================================
+   FORM LAYOUT
+========================================================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    padding:20px;
+}
+
+.single-form{
+    grid-template-columns:1fr;
+}
+
+.form-grid div{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.form-grid label{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:500;
+}
+
+.form-grid input,
+.form-grid select{
+    width:100%;
+    height:42px;
+    padding:10px 14px;
+    background:#111827;
+    border:1px solid #374151;
+    color:#fff;
+    border-radius:8px;
+    transition:.25s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 5px rgba(59,130,246,.3);
+}
+
+.form-grid textarea{
+    width:100%;
+    min-height:120px;
+    padding:12px;
+    background:#111827;
+    color:#fff;
+    border:1px solid #374151;
+    border-radius:8px;
+    resize:vertical;
+}
+
+.form-grid button{
+    grid-column:span 2;
+    margin-top:10px;
+}
+
+.single-form button{
+    grid-column:span 1;
+}
+
+/* =========================================================
+   TABLE DESIGN
+========================================================= */
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#1f2937;
+}
+
+th{
+    padding:14px;
+    text-align:left;
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:600;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    font-size:13px;
+    color:#e5e7eb;
+}
+
+tbody tr{
+    transition:.2s;
+}
+
+tbody tr:hover{
+    background:#202938;
+}
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:600;
 }
 
 .in-stock,
-.loyal,
-.fast-delivery {
-  background: rgba(34,211,165,0.15);
-  color: #22d3a5;
+.fast-delivery,
+.loyal{
+    background:rgba(16,185,129,.15);
+    color:#10b981;
 }
 
 .low-stock,
-.medium-loyal {
-  background: rgba(247,184,79,0.15);
-  color: #f7b84f;
+.medium-loyal{
+    background:rgba(245,158,11,.15);
+    color:#f59e0b;
 }
 
 .out-stock,
-.new-customer,
-.delayed-delivery {
-  background: rgba(247,95,95,0.15);
-  color: #f75f5f;
+.delayed-delivery,
+.new-customer{
+    background:rgba(239,68,68,.15);
+    color:#ef4444;
 }
 
-.settings-list,
-.list-box {
-  padding: 20px;
+/* =========================================================
+   REPORT LIST
+========================================================= */
+
+.report-list{
+    padding:15px;
 }
 
-.list-box {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.report-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.report-row:last-child{
+    border-bottom:none;
+}
+
+.report-row span{
+    color:#9ca3af;
+}
+
+/* =========================================================
+   HISTORY BOX
+========================================================= */
+
+.history-box{
+    margin:18px;
+    padding:20px;
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:12px;
+    min-height:240px;
+}
+
+.history-box h2{
+    color:#3b82f6;
+    margin-bottom:18px;
+}
+
+.history-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    padding-bottom:10px;
+    border-bottom:1px dashed rgba(255,255,255,.08);
+}
+
+.history-total{
+    margin-top:18px;
+    padding-top:15px;
+    border-top:1px solid #374151;
+    color:#22c55e;
+    font-size:20px;
+    font-weight:700;
+}
+
+/* =========================================================
+   INVOICE BOX
+========================================================= */
+
+.invoice-box{
+    margin:18px;
+    padding:20px;
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:12px;
+    min-height:240px;
+}
+
+.invoice-box h2{
+    color:#3b82f6;
+    margin-bottom:18px;
+}
+
+.invoice-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.invoice-total{
+    margin-top:18px;
+    padding-top:15px;
+    border-top:1px solid #374151;
+    color:#22c55e;
+    font-size:22px;
+    font-weight:700;
+}
+
+/* =========================================================
+   CHART AREA
+========================================================= */
+
+.chart-container{
+    padding:20px;
+}
+
+canvas{
+    width:100%;
+    height:320px;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-message{
+    text-align:center;
+    color:#94a3b8;
+    padding:40px 20px;
+    font-size:15px;
+}
+
+/* =========================================================
+   FULL WIDTH BUTTON
+========================================================= */
+
+.full-btn{
+    width:calc(100% - 40px);
+    margin:20px;
+}
+
+/* =========================================================
+   LIST BOX
+========================================================= */
+
+.list-box{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:20px;
 }
 
 .settings-row,
-.check-row {
-  background: #111827;
-  border: 1px solid #262d3f;
-  padding: 14px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.check-row {
-  display: flex;
-  gap: 12px;
-}
-
-body.light-mode {
-  background: #f4f6f9;
-  color: #111827;
-}
-
-body.light-mode .sidebar,
-body.light-mode .topbar,
-body.light-mode .panel,
-body.light-mode .card {
-  background: white;
-  color: #111827;
-}
-
-body.light-mode input,
-body.light-mode select,
-body.light-mode .invoice-box,
-body.light-mode .history-box,
-body.light-mode .settings-row,
-body.light-mode .check-row {
-  background: #f8fafc;
-  color: #111827;
-}
-
-@media (max-width: 1100px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 750px) {
-  body {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .topbar,
-  .top-actions {
-    flex-direction: column;
-  }
-
-  .topbar input,
-  .top-actions input,
-  .top-actions select {
-    width: 100%;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid button {
-    grid-column: span 1;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-  
-}
-/*income card*/
-
-
-.income-card{
-    width:400px;
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    text-align:center;
-}
-
-.income-card input{
-    width:90%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ddd;
+.check-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    border:1px solid #374151;
     border-radius:10px;
+    background:#111827;
 }
 
-.income-card button{
-    width:95%;
-    padding:12px;
-    border:none;
-    background:#2563eb;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
+.check-row{
+    gap:12px;
 }
+/* =========================================================
+   PART 2 - FINANCIAL MODULES
+   Income | Expense | Saving | Budget | Loan
+========================================================= */
 
-.income-card button:hover{
-    background:#1d4ed8;
-}
-/*expense card*/
+/* =========================================================
+   COMMON MODULE CONTAINER
+========================================================= */
 
-
-.expense-card{
-    width:400px;
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    text-align:center;
-}
-
-.expense-card input{
-    width:90%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-.expense-card button{
-    width:95%;
-    padding:12px;
-    border:none;
-    background:#2563eb;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-.expense-card button:hover{
-    background:#1d4ed8;
-}
-.saving-card{
-    width:400px;
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    text-align:center;
-}
-
-.saving-card input,
-.saving-card select{
-    width:90%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-.saving-card button{
-    width:95%;
-    padding:12px;
-    border:none;
-    background:#2563eb;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-.saving-card button:hover{
-    background:#1d4ed8;
-}
-
-.saving-options{
+.module-container{
+    width:100%;
     display:flex;
     justify-content:center;
-    gap:20px;
-    margin-bottom:30px;
+    align-items:flex-start;
+    padding:20px;
 }
 
+.module-title{
+    font-size:30px;
+    font-weight:600;
+    color:#ffffff;
+    margin-bottom:25px;
+    text-align:center;
+}
 
-/* ==========================
+/* =========================================================
+   COMMON CARD STYLE
+========================================================= */
+
+.income-card,
+.expense-card,
+.saving-card,
+.budget-card,
+.loan-card{
+
+    width:100%;
+    max-width:520px;
+
+    background:#ffffff;
+
+    color:#111827;
+
+    padding:30px;
+
+    border-radius:16px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    text-align:left;
+
+    margin:auto;
+
+}
+
+.income-card h2,
+.expense-card h2,
+.saving-card h2,
+.budget-card h2,
+.loan-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-size:24px;
+
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.income-card input,
+.expense-card input,
+.saving-card input,
+.saving-card select,
+.budget-card input,
+.budget-card select,
+.loan-card input,
+.loan-card select{
+
+    width:100%;
+
+    height:42px;
+
+    padding:10px 14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.income-card input:focus,
+.expense-card input:focus,
+.saving-card input:focus,
+.budget-card input:focus,
+.loan-card input:focus,
+.saving-card select:focus,
+.budget-card select:focus,
+.loan-card select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 5px rgba(37,99,235,.25);
+
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.income-card button,
+.expense-card button,
+.saving-card button,
+.budget-card button,
+.loan-card button{
+
+    width:100%;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.income-card button:hover,
+.expense-card button:hover,
+.saving-card button:hover,
+.budget-card button:hover,
+.loan-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* =========================================================
+   SAVING OPTIONS
+========================================================= */
+
+.saving-options{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.saving-options button{
+
+    width:200px;
+
+}
+
+/* =========================================================
    BUDGET MODULE
-========================== */
+========================================================= */
 
 .budget-menu{
-    text-align:center;
-    margin-bottom:30px;
-}
 
-.budget-menu h1{
-    color:#ffffff;
-    margin-bottom:20px;
+    text-align:center;
+
+    margin-bottom:25px;
+
 }
 
 .budget-container{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    width:100%;
+
 }
 
-.budget-card{
-    width:420px;
-    background:#ffffff;
-    color:#111827;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.20);
-    text-align:center;
-}
+.budget-card label{
 
-.budget-card h2{
-    color:#2563eb;
-    margin-bottom:20px;
-}
+    display:block;
 
-.budget-card input,
-.budget-card select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #d1d5db;
-    border-radius:10px;
-    outline:none;
-    font-size:15px;
-}
+    margin-bottom:8px;
 
-.budget-card button{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:#ffffff;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-    transition:.3s;
-}
+    font-size:14px;
 
-.budget-card button:hover{
-    background:#1d4ed8;
+    font-weight:600;
+
 }
 
 progress{
+
     width:100%;
-    height:22px;
-    margin-top:15px;
+
+    height:20px;
+
+    margin-top:20px;
+
 }
 
 #budgetStatus{
-    margin-top:20px;
-    font-size:20px;
-    font-weight:bold;
+
+    text-align:center;
+
+    margin-top:18px;
+
     color:#16a34a;
-}
 
-@media(max-width:768px){
+    font-size:18px;
 
-    .budget-card{
-        width:95%;
-        padding:25px;
-    }
+    font-weight:700;
 
 }
-/* ========================= */
-/* LOAN MODULE */
-/* ========================= */
+
+/* =========================================================
+   LOAN MODULE
+========================================================= */
 
 .loan-menu{
-    text-align:center;
-    margin-top:20px;
-}
 
-.loan-menu h1{
-    color:white;
+    text-align:center;
+
     margin-bottom:25px;
+
 }
 
 .loan-options{
+
     display:flex;
+
     justify-content:center;
+
+    flex-wrap:wrap;
+
     gap:20px;
-    margin-bottom:35px;
+
+    margin-bottom:30px;
+
 }
 
 .loan-options button{
 
     width:220px;
 
-    padding:15px;
-
-    border:none;
-
-    border-radius:12px;
+    height:45px;
 
     background:#2563eb;
 
-    color:white;
+    color:#fff;
 
-    font-size:16px;
+    border:none;
+
+    border-radius:10px;
+
+    font-size:15px;
 
     cursor:pointer;
 
@@ -816,68 +1073,1069 @@ progress{
 
     background:#1d4ed8;
 
-    transform:scale(1.05);
+    transform:translateY(-2px);
 
 }
 
+/* =========================================================
+   SUMMARY BOX
+========================================================= */
+
+.summary-box{
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#f8fafc;
+
+    border:1px solid #dbeafe;
+
+    border-radius:10px;
+
+}
+
+.summary-box h3{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    font-size:14px;
+
+}
+
+.error-message{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    font-size:14px;
+
+}
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+.income-card,
+.expense-card,
+.saving-card,
+.budget-card,
 .loan-card{
 
-    width:450px;
+    transition:.3s;
 
-    background:white;
+}
 
-    color:black;
+.income-card:hover,
+.expense-card:hover,
+.saving-card:hover,
+.budget-card:hover,
+.loan-card:hover{
 
-    padding:35px;
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+
+}
+/* =========================================================
+   PART 3
+   REPORTS | INVENTORY | CUSTOMERS | SUPPLIERS
+   PERFORMANCE | ALERTS | SETTINGS
+========================================================= */
+
+
+/* =========================================================
+   REPORT SECTION
+========================================================= */
+
+.report-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.report-card{
+
+    background:#181c27;
+
+    border:1px solid #2d3748;
+
+    border-radius:14px;
+
+    padding:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+.report-card h2{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    color:#4f8ef7;
+
+}
+
+.report-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.report-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.report-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.report-row strong{
+
+    color:#ffffff;
+
+}
+
+.report-row span{
+
+    color:#9ca3af;
+
+}
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+.inventory-summary{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:18px;
+
+    margin-bottom:20px;
+
+}
+
+.inventory-card{
+
+    background:#181c27;
+
+    border:1px solid #2d3748;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.inventory-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.inventory-card h3{
+
+    color:#4f8ef7;
+
+    margin-bottom:10px;
+
+}
+
+.inventory-card p{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+}
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.performance-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.performance-item{
+
+    padding:18px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.performance-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.performance-item h4{
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.performance-item p{
+
+    color:#9ca3af;
+
+    font-size:13px;
+
+}
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.bar{
+
+    width:100%;
+
+    height:8px;
+
+    background:#30384b;
 
     border-radius:20px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.20);
+    overflow:hidden;
 
-    text-align:center;
+    margin-top:8px;
 
 }
 
-.loan-card input,
-.loan-card select{
+.fill{
 
-    width:95%;
+    height:100%;
 
-    padding:12px;
+    border-radius:20px;
 
-    margin:10px 0;
+    background:#4f8ef7;
 
-    border:1px solid #ccc;
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.alert-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.alert-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.alert-item strong{
+
+    color:#ef4444;
+
+}
+
+.alert-item span{
+
+    color:#9ca3af;
+
+}
+
+/* =========================================================
+   CUSTOMER LOYALTY
+========================================================= */
+
+.loyalty-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.loyalty-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================================================
+   SUPPLIER PERFORMANCE
+========================================================= */
+
+.supplier-performance-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.supplier-performance-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.supplier-performance-item:last-child{
+
+    border-bottom:none;
+
+}
+
+/* =========================================================
+   EXPENSE ANALYSIS
+========================================================= */
+
+.expense-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.expense-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================================================
+   SALES TREND
+========================================================= */
+
+.trend-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.trend-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.settings-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:20px;
+
+}
+
+.settings-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    background:#111827;
+
+    border:1px solid #374151;
 
     border-radius:10px;
 
 }
 
-.loan-card button{
+.settings-row label{
 
-    width:95%;
+    color:white;
 
-    padding:12px;
+    font-size:14px;
 
-    border:none;
+}
 
-    border-radius:10px;
+.settings-row input{
+
+    width:220px;
+
+}
+
+/* =========================================================
+   QUICK ACTION BUTTONS
+========================================================= */
+
+.action-group{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.action-btn{
+
+    padding:10px 18px;
 
     background:#2563eb;
 
     color:white;
 
+    border-radius:8px;
+
+    border:none;
+
     cursor:pointer;
 
-    font-size:15px;
+    transition:.3s;
 
 }
 
-.loan-card button:hover{
+.action-btn:hover{
 
     background:#1d4ed8;
 
 }
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.statistics{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+}
+
+.stat-card{
+
+    background:#181c27;
+
+    border-radius:14px;
+
+    border:1px solid #2d3748;
+
+    padding:20px;
+
+}
+
+.stat-card h2{
+
+    font-size:28px;
+
+    color:#4f8ef7;
+
+}
+
+.stat-card p{
+
+    color:#9ca3af;
+
+    margin-top:8px;
+
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:25px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.success{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+}
+
+.warning{
+
+    background:rgba(245,158,11,.15);
+
+    color:#f59e0b;
+
+}
+
+.danger{
+
+    background:rgba(239,68,68,.15);
+
+    color:#ef4444;
+
+}
+
+.info{
+
+    background:rgba(59,130,246,.15);
+
+    color:#3b82f6;
+
+}
+/* =========================================================
+   PART 4
+   RESPONSIVE DESIGN | LIGHT MODE | FINAL POLISH
+========================================================= */
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light-mode{
+    background:#f4f6f9;
+    color:#111827;
+}
+
+body.light-mode .sidebar{
+    background:#ffffff;
+    border-right:1px solid #d1d5db;
+}
+
+body.light-mode .logo h2{
+    color:#2563eb;
+}
+
+body.light-mode .logo p,
+body.light-mode .nav-item{
+    color:#4b5563;
+}
+
+body.light-mode .nav-item:hover,
+body.light-mode .nav-item.active{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+body.light-mode .topbar,
+body.light-mode .panel,
+body.light-mode .card,
+body.light-mode .inventory-card,
+body.light-mode .report-card,
+body.light-mode .stat-card{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+body.light-mode table thead{
+    background:#f3f4f6;
+}
+
+body.light-mode th{
+    color:#374151;
+}
+
+body.light-mode td{
+    color:#4b5563;
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+body.light-mode .settings-row,
+body.light-mode .check-row,
+body.light-mode .invoice-box,
+body.light-mode .history-box{
+    background:#f9fafb;
+}
+
+/* =========================================================
+   PAGE TITLES
+========================================================= */
+
+h1{
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:24px;
+}
+
+h3{
+    font-size:18px;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4f8ef7;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#2563eb;
+}
+
+/* =========================================================
+   SMOOTH ANIMATIONS
+========================================================= */
+
+*{
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.card,
+.panel,
+.inventory-card,
+.report-card,
+.loan-card,
+.budget-card,
+.income-card,
+.expense-card,
+.saving-card{
+    transition:transform .3s ease,
+               box-shadow .3s ease;
+}
+
+.card:hover,
+.panel:hover,
+.inventory-card:hover,
+.report-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(0,0,0,.18);
+}
+
+/* =========================================================
+   IMAGE STYLE
+========================================================= */
+
+img{
+    max-width:100%;
+    height:auto;
+    border-radius:10px;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a{
+    color:#4f8ef7;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px){
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.main{
+
+padding:18px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.sidebar{
+
+width:80px;
+
+padding:15px;
+
+}
+
+.logo p,
+.nav-item span{
+
+display:none;
+
+}
+
+.main{
+
+margin-left:80px;
+
+width:calc(100% - 80px);
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.top-actions{
+
+width:100%;
+
+justify-content:space-between;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+}
+
+.main{
+
+margin-left:0;
+
+width:100%;
+
+padding:15px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.statistics{
+
+grid-template-columns:1fr;
+
+}
+
+.inventory-summary{
+
+grid-template-columns:1fr;
+
+}
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-grid button{
+
+grid-column:span 1;
+
+}
+
+.loan-options,
+.saving-options{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.loan-options button,
+.saving-options button{
+
+width:100%;
+
+max-width:350px;
+
+}
+
+.topbar input{
+
+width:100%;
+
+}
+
+table{
+
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+}
+
+}
+
+@media(max-width:480px){
+
+h1{
+
+font-size:24px;
+
+}
+
+.card h2{
+
+font-size:20px;
+
+}
+
+.topbar{
+
+padding:15px;
+
+}
+
+.panel-head{
+
+padding:15px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+margin-top:30px;
+
+padding:15px;
+
+text-align:center;
+
+color:#9ca3af;
+
+font-size:13px;
+
+}
+
+/* =========================================================
+   FINAL PROFESSIONAL EFFECT
+========================================================= */
+
+body{
+
+scroll-behavior:smooth;
+
+}
+
+.panel,
+.card{
+
+overflow:hidden;
+
+}
+
+.card h2,
+.report-card h2,
+.inventory-card h3{
+
+font-weight:600;
+
+letter-spacing:.4px;
+
+}
+
+button:active{
+
+transform:scale(.98);
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+outline:none;
+
+}
+
+.hidden{
+
+display:none !important;
+
+}
+
+.show{
+
+display:block !important;
+
+}
+
+/* =========================
+   END OF STYLE.CSS
+========================= */
 #buiness dashboard
 /* ==========================================
         GOOGLE FONT
