@@ -2435,6 +2435,90 @@ display:block !important;
 
 }
 
+   // Income vs Expense (Line)
+new Chart(document.getElementById("incomeExpenseChart"),{
+
+type:"line",
+
+data:{
+
+labels:["Jan","Feb","Mar","Apr","May","Jun"],
+
+datasets:[
+{
+label:"Income",
+data:[5000,6200,7000,6500,8000,9000],
+borderColor:"#22c55e",
+fill:false,
+tension:0.4
+},
+{
+label:"Expense",
+data:[3500,4200,5000,4700,5200,6000],
+borderColor:"#ef4444",
+fill:false,
+tension:0.4
+}
+]
+
+},
+
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
+
+});
+
+// Expense Pie
+new Chart(document.getElementById("expensePieChart"),{
+
+type:"pie",
+
+data:{
+
+labels:["Food","Rent","Transport","Shopping","Bills"],
+
+datasets:[{
+
+data:[1500,2500,700,1000,800]
+
+}]
+
+},
+
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
+
+});
+
+// Savings Bar
+new Chart(document.getElementById("savingChart"),{
+
+type:"bar",
+
+data:{
+
+labels:["Jan","Feb","Mar","Apr","May","Jun"],
+
+datasets:[{
+
+label:"Savings",
+
+data:[1500,1800,2000,1700,2500,3000]
+
+}]
+
+},
+
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
+
+});
 /* =========================
    END OF STYLE.CSS
 ========================= */
