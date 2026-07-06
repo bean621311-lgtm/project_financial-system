@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Business Dashboard</title>
+<title>Business Dashboard</title>
 
-    <!-- Bootstrap -->
+<!-- Bootstrap -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
 
-    <!-- Font Awesome -->
+<!-- Font Awesome -->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet">
 
-    <!-- Dashboard CSS -->
+<!-- Dashboard CSS -->
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
 
 </head>
 
@@ -34,91 +35,91 @@
 
 <div class="sidebar">
 
-    <div class="logo">
+<div class="logo">
 
-        <h2>
+    <h2>
 
-            <i class="fa-solid fa-chart-pie"></i>
+        <i class="fa-solid fa-chart-pie"></i>
 
-            Finance System
+        Finance System
 
-        </h2>
+    </h2>
 
-    </div>
+</div>
 
-    <ul>
+<ul>
 
-        <li class="active">
-            <a href="#">
-                <i class="fa-solid fa-house"></i>
-                Dashboard
-            </a>
-        </li>
+    <li class="active">
+        <a href="#">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-cart-shopping"></i>
-                Sales
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Sales
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-money-bill-wave"></i>
-                Expenses
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Expenses
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-wallet"></i>
-                Budget
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-wallet"></i>
+            Budget
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-piggy-bank"></i>
-                Savings
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-piggy-bank"></i>
+            Savings
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-boxes-stacked"></i>
-                Inventory
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            Inventory
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-chart-column"></i>
-                Reports
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-chart-column"></i>
+            Reports
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-user"></i>
-                Profile
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-gear"></i>
-                Settings
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+    </li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                Logout
-            </a>
-        </li>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </li>
 
-    </ul>
+</ul>
 
 </div>
 
@@ -130,63 +131,63 @@
 
 <div class="topbar">
 
-    <div class="page-title">
+<div class="page-title">
 
-        <h2>Business Dashboard</h2>
+    <h2>Business Dashboard</h2>
 
-        <p>Welcome back, Admin</p>
+    <p>Welcome back, Admin</p>
 
-    </div>
+</div>
 
-    <div class="top-right">
+<div class="top-right">
 
-        <!-- Search -->
+    <!-- Search -->
 
-        <div class="search-box">
+    <div class="search-box">
 
-            <input type="text"
-                   placeholder="Search...">
+        <input type="text"
+               placeholder="Search...">
 
-            <button>
+        <button>
 
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-            </button>
-
-        </div>
-
-        <!-- Notification -->
-
-        <button class="notification-btn">
-
-            <i class="fa-solid fa-bell"></i>
-
-            <span class="badge bg-danger">
-
-                3
-
-            </span>
+            <i class="fa-solid fa-magnifying-glass"></i>
 
         </button>
 
-        <!-- Profile -->
+    </div>
 
-        <div class="profile">
+    <!-- Notification -->
 
-            <img src="https://ui-avatars.com/api/?name=Admin"
-                 alt="profile">
+    <button class="notification-btn">
 
-            <div>
+        <i class="fa-solid fa-bell"></i>
 
-                <h6>Admin</h6>
+        <span class="badge bg-danger">
 
-                <small>Administrator</small>
+            3
 
-            </div>
+        </span>
+
+    </button>
+
+    <!-- Profile -->
+
+    <div class="profile">
+
+        <img src="https://ui-avatars.com/api/?name=Admin"
+             alt="profile">
+
+        <div>
+
+            <h6>Admin</h6>
+
+            <small>Administrator</small>
 
         </div>
 
     </div>
+
+</div>
 
 </div>
 
@@ -194,53 +195,53 @@
 
 <div class="quick-actions mt-4">
 
-    <button class="btn btn-success">
+<button class="btn btn-success">
 
-        <i class="fa-solid fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
 
-        Add Sale
+    Add Sale
 
-    </button>
+</button>
 
-    <button class="btn btn-danger">
+<button class="btn btn-danger">
 
-        <i class="fa-solid fa-minus"></i>
+    <i class="fa-solid fa-minus"></i>
 
-        Add Expense
+    Add Expense
 
-    </button>
+</button>
 
-    <button class="btn btn-warning">
+<button class="btn btn-warning">
 
-        <i class="fa-solid fa-piggy-bank"></i>
+    <i class="fa-solid fa-piggy-bank"></i>
 
-        Add Savings
+    Add Savings
 
-    </button>
+</button>
 
-    <button class="btn btn-primary">
+<button class="btn btn-primary">
 
-        <i class="fa-solid fa-wallet"></i>
+    <i class="fa-solid fa-wallet"></i>
 
-        Create Budget
+    Create Budget
 
-    </button>
+</button>
 
-    <button class="btn btn-info text-white">
+<button class="btn btn-info text-white">
 
-        <i class="fa-solid fa-file-pdf"></i>
+    <i class="fa-solid fa-file-pdf"></i>
 
-        Export PDF
+    Export PDF
 
-    </button>
+</button>
 
-    <button class="btn btn-secondary">
+<button class="btn btn-secondary">
 
-        <i class="fa-solid fa-file-csv"></i>
+    <i class="fa-solid fa-file-csv"></i>
 
-        Export CSV
+    Export CSV
 
-    </button>
+</button>
 
 </div>
 
@@ -248,150 +249,150 @@
 
 <div class="row mt-4">
 
-    <div class="col-xl-2 col-md-4 col-sm-6 mb-3">
+<div class="col-xl-2 col-md-4 col-sm-6 mb-3">
 
-        <div class="dashboard-card">
+    <div class="dashboard-card">
 
-            <div class="card-icon sales">
+        <div class="card-icon sales">
 
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-
-            <h6>Total Sales</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ total_sales }}">
-
-                    0
-
-                </span>
-
-            </h3>
+            <i class="fa-solid fa-cart-shopping"></i>
 
         </div>
 
+        <h6>Total Sales</h6>
+
+        <h3>
+
+            Rs.
+
+            <span class="counter"
+                  data-target="{{ total_sales }}">
+
+                0
+
+            </span>
+
+        </h3>
+
     </div>
 
-    <div class="col-xl-2 col-md-4 col-sm-6 mb-3">
+</div>
 
-        <div class="dashboard-card">
+<div class="col-xl-2 col-md-4 col-sm-6 mb-3">
 
-            <div class="card-icon expense">
+    <div class="dashboard-card">
 
-                <i class="fa-solid fa-money-bill-wave"></i>
+        <div class="card-icon expense">
 
-            </div>
-
-            <h6>Total Expenses</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ total_expense }}">
-
-                    0
-
-                </span>
-
-            </h3>
+            <i class="fa-solid fa-money-bill-wave"></i>
 
         </div>
 
+        <h6>Total Expenses</h6>
+
+        <h3>
+
+            Rs.
+
+            <span class="counter"
+                  data-target="{{ total_expense }}">
+
+                0
+
+            </span>
+
+        </h3>
+
     </div>
 
-    <div class="col-xl-2 col-md-4 col-sm-6 mb-3">
+</div>
 
-        <div class="dashboard-card">
+<div class="col-xl-2 col-md-4 col-sm-6 mb-3">
 
-            <div class="card-icon budget">
+    <div class="dashboard-card">
 
-                <i class="fa-solid fa-wallet"></i>
+        <div class="card-icon budget">
 
-            </div>
-
-            <h6>Current Budget</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ budget }}">
-
-                    0
-
-                </span>
-
-            </h3>
+            <i class="fa-solid fa-wallet"></i>
 
         </div>
 
+        <h6>Current Budget</h6>
+
+        <h3>
+
+            Rs.
+
+            <span class="counter"
+                  data-target="{{ budget }}">
+
+                0
+
+            </span>
+
+        </h3>
+
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-3">
+</div>
 
-        <div class="dashboard-card">
+<div class="col-xl-3 col-md-6 mb-3">
 
-            <div class="card-icon saving">
+    <div class="dashboard-card">
 
-                <i class="fa-solid fa-piggy-bank"></i>
+        <div class="card-icon saving">
 
-            </div>
-
-            <h6>Total Savings</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ savings }}">
-
-                    0
-
-                </span>
-
-            </h3>
+            <i class="fa-solid fa-piggy-bank"></i>
 
         </div>
 
+        <h6>Total Savings</h6>
+
+        <h3>
+
+            Rs.
+
+            <span class="counter"
+                  data-target="{{ savings }}">
+
+                0
+
+            </span>
+
+        </h3>
+
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-3">
+</div>
 
-        <div class="dashboard-card">
+<div class="col-xl-3 col-md-6 mb-3">
 
-            <div class="card-icon profit">
+    <div class="dashboard-card">
 
-                <i class="fa-solid fa-chart-line"></i>
+        <div class="card-icon profit">
 
-            </div>
-
-            <h6>Net Profit / Loss</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ profit }}">
-
-                    0
-
-                </span>
-
-            </h3>
+            <i class="fa-solid fa-chart-line"></i>
 
         </div>
 
+        <h6>Net Profit / Loss</h6>
+
+        <h3>
+
+            Rs.
+
+            <span class="counter"
+                  data-target="{{ profit }}">
+
+                0
+
+            </span>
+
+        </h3>
+
     </div>
+
+</div>
 
 </div>
 
@@ -427,113 +428,113 @@ Next Part will contain:
 
 <div class="row mt-4">
 
-    <!-- Sales vs Expenses Chart -->
+<!-- Sales vs Expenses Chart -->
 
-    <div class="col-lg-8 mb-4">
+<div class="col-lg-8 mb-4">
 
-        <div class="card shadow-sm border-0">
+    <div class="card shadow-sm border-0">
 
-            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
 
-                <h5 class="mb-0">
-                    <i class="fa-solid fa-chart-line text-primary"></i>
-                    Monthly Sales vs Expenses
-                </h5>
+            <h5 class="mb-0">
+                <i class="fa-solid fa-chart-line text-primary"></i>
+                Monthly Sales vs Expenses
+            </h5>
 
-                <select class="form-select w-auto">
+            <select class="form-select w-auto">
 
-                    <option>This Year</option>
-                    <option>Last Year</option>
+                <option>This Year</option>
+                <option>Last Year</option>
 
-                </select>
+            </select>
 
-            </div>
+        </div>
 
-            <div class="card-body">
+        <div class="card-body">
 
-                <canvas id="salesExpenseChart"
-                        height="120"></canvas>
-
-            </div>
+            <canvas id="salesExpenseChart"
+                    height="120"></canvas>
 
         </div>
 
     </div>
 
+</div>
 
 
-    <!-- Budget Progress -->
 
-    <div class="col-lg-4 mb-4">
+<!-- Budget Progress -->
 
-        <div class="card shadow-sm border-0">
+<div class="col-lg-4 mb-4">
 
-            <div class="card-header bg-white">
+    <div class="card shadow-sm border-0">
 
-                <h5>
+        <div class="card-header bg-white">
 
-                    <i class="fa-solid fa-wallet text-success"></i>
+            <h5>
 
-                    Budget Overview
+                <i class="fa-solid fa-wallet text-success"></i>
 
-                </h5>
+                Budget Overview
 
-            </div>
+            </h5>
 
-            <div class="card-body">
+        </div>
 
-                <h6 class="mb-2">
+        <div class="card-body">
 
-                    Budget Used
+            <h6 class="mb-2">
 
-                </h6>
+                Budget Used
 
-                <div class="progress mb-3"
-                     style="height:18px;">
+            </h6>
 
-                    <div class="progress-bar bg-success"
+            <div class="progress mb-3"
+                 style="height:18px;">
 
-                         role="progressbar"
+                <div class="progress-bar bg-success"
 
-                         style="width: {{ budget_percentage }}%;">
+                     role="progressbar"
 
-                        {{ budget_percentage }}%
+                     style="width: {{ budget_percentage }}%;">
 
-                    </div>
+                    {{ budget_percentage }}%
 
                 </div>
 
-                <hr>
-
-                <p>
-
-                    <strong>Total Budget :</strong>
-
-                    Rs. {{ budget }}
-
-                </p>
-
-                <p>
-
-                    <strong>Total Expenses :</strong>
-
-                    Rs. {{ total_expense }}
-
-                </p>
-
-                <p>
-
-                    <strong>Remaining Budget :</strong>
-
-                    Rs. {{ remaining_budget }}
-
-                </p>
-
             </div>
+
+            <hr>
+
+            <p>
+
+                <strong>Total Budget :</strong>
+
+                Rs. {{ budget }}
+
+            </p>
+
+            <p>
+
+                <strong>Total Expenses :</strong>
+
+                Rs. {{ total_expense }}
+
+            </p>
+
+            <p>
+
+                <strong>Remaining Budget :</strong>
+
+                Rs. {{ remaining_budget }}
+
+            </p>
 
         </div>
 
     </div>
+
+</div>
 
 </div>
 
@@ -543,69 +544,173 @@ Next Part will contain:
 
 <div class="card shadow-sm border-0 mt-3">
 
-    <div class="card-header bg-white d-flex justify-content-between">
+<div class="card-header bg-white d-flex justify-content-between">
 
-        <h5>
+    <h5>
 
-            <i class="fa-solid fa-cart-shopping text-success"></i>
+        <i class="fa-solid fa-cart-shopping text-success"></i>
 
-            Recent Sales
+        Recent Sales
 
-        </h5>
+    </h5>
 
-        <button class="btn btn-success btn-sm">
+    <button class="btn btn-success btn-sm">
 
-            <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus"></i>
 
-            Add Sale
+        Add Sale
 
-        </button>
+    </button>
+
+</div>
+
+<div class="card-body">
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead class="table-dark">
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Date</th>
+
+                    <th>Description</th>
+
+                    <th>Payment Type</th>
+
+                    <th>Amount</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for sale in sales %}
+
+                <tr>
+
+                    <td>{{ sale.id }}</td>
+
+                    <td>{{ sale.date }}</td>
+
+                    <td>{{ sale.description }}</td>
+
+                    <td>
+
+                        <span class="badge bg-primary">
+
+                            {{ sale.payment_type }}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        Rs. {{ sale.amount }}
+
+                    </td>
+
+                    <td>
+
+                        <button class="btn btn-sm btn-warning">
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+                        <button class="btn btn-sm btn-danger">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
 
     </div>
 
-    <div class="card-body">
+</div>
 
-        <div class="table-responsive">
+</div>
+<!-- ================= Recent Expenses & Savings ================= -->
 
-            <table class="table table-hover align-middle">
+<div class="row mt-4">
 
-                <thead class="table-dark">
+<!-- Recent Expenses -->
+
+<div class="col-lg-6 mb-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-white d-flex justify-content-between">
+
+            <h5>
+
+                <i class="fa-solid fa-money-bill-wave text-danger"></i>
+
+                Recent Expenses
+
+            </h5>
+
+            <button class="btn btn-danger btn-sm">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Expense
+
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-danger">
+
+                        <tr>
+
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Payment</th>
+                            <th>Amount</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for expense in expenses %}
 
                     <tr>
 
-                        <th>ID</th>
+                        <td>{{ expense.date }}</td>
 
-                        <th>Date</th>
-
-                        <th>Description</th>
-
-                        <th>Payment Type</th>
-
-                        <th>Amount</th>
-
-                        <th>Action</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                {% for sale in sales %}
-
-                    <tr>
-
-                        <td>{{ sale.id }}</td>
-
-                        <td>{{ sale.date }}</td>
-
-                        <td>{{ sale.description }}</td>
+                        <td>{{ expense.description }}</td>
 
                         <td>
 
-                            <span class="badge bg-primary">
+                            <span class="badge bg-danger">
 
-                                {{ sale.payment_type }}
+                                {{ expense.payment_type }}
 
                             </span>
 
@@ -613,210 +718,17 @@ Next Part will contain:
 
                         <td>
 
-                            Rs. {{ sale.amount }}
-
-                        </td>
-
-                        <td>
-
-                            <button class="btn btn-sm btn-warning">
-
-                                <i class="fa-solid fa-pen"></i>
-
-                            </button>
-
-                            <button class="btn btn-sm btn-danger">
-
-                                <i class="fa-solid fa-trash"></i>
-
-                            </button>
+                            Rs. {{ expense.amount }}
 
                         </td>
 
                     </tr>
 
-                {% endfor %}
+                    {% endfor %}
 
-                </tbody>
+                    </tbody>
 
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
-<!-- ================= Recent Expenses & Savings ================= -->
-
-<div class="row mt-4">
-
-    <!-- Recent Expenses -->
-
-    <div class="col-lg-6 mb-4">
-
-        <div class="card shadow-sm border-0">
-
-            <div class="card-header bg-white d-flex justify-content-between">
-
-                <h5>
-
-                    <i class="fa-solid fa-money-bill-wave text-danger"></i>
-
-                    Recent Expenses
-
-                </h5>
-
-                <button class="btn btn-danger btn-sm">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Add Expense
-
-                </button>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="table-responsive">
-
-                    <table class="table table-hover align-middle">
-
-                        <thead class="table-danger">
-
-                            <tr>
-
-                                <th>Date</th>
-                                <th>Description</th>
-                                <th>Payment</th>
-                                <th>Amount</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                        {% for expense in expenses %}
-
-                        <tr>
-
-                            <td>{{ expense.date }}</td>
-
-                            <td>{{ expense.description }}</td>
-
-                            <td>
-
-                                <span class="badge bg-danger">
-
-                                    {{ expense.payment_type }}
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                Rs. {{ expense.amount }}
-
-                            </td>
-
-                        </tr>
-
-                        {% endfor %}
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Recent Savings -->
-
-    <div class="col-lg-6 mb-4">
-
-        <div class="card shadow-sm border-0">
-
-            <div class="card-header bg-white d-flex justify-content-between">
-
-                <h5>
-
-                    <i class="fa-solid fa-piggy-bank text-warning"></i>
-
-                    Recent Savings
-
-                </h5>
-
-                <button class="btn btn-warning btn-sm">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Add Savings
-
-                </button>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="table-responsive">
-
-                    <table class="table table-hover align-middle">
-
-                        <thead class="table-warning">
-
-                            <tr>
-
-                                <th>Date</th>
-                                <th>Description</th>
-                                <th>Payment</th>
-                                <th>Amount</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                        {% for saving in savings_list %}
-
-                        <tr>
-
-                            <td>{{ saving.date }}</td>
-
-                            <td>{{ saving.description }}</td>
-
-                            <td>
-
-                                <span class="badge bg-warning text-dark">
-
-                                    {{ saving.payment_type }}
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                Rs. {{ saving.amount }}
-
-                            </td>
-
-                        </tr>
-
-                        {% endfor %}
-
-                        </tbody>
-
-                    </table>
-
-                </div>
+                </table>
 
             </div>
 
@@ -826,312 +738,86 @@ Next Part will contain:
 
 </div>
 
+<!-- Recent Savings -->
 
+<div class="col-lg-6 mb-4">
 
-<!-- ================= Inventory Management ================= -->
+    <div class="card shadow-sm border-0">
 
-<div class="row mt-4">
+        <div class="card-header bg-white d-flex justify-content-between">
 
-    <!-- Inventory Summary Cards -->
+            <h5>
 
-    <div class="col-xl-3 col-md-6 mb-3">
+                <i class="fa-solid fa-piggy-bank text-warning"></i>
 
-        <div class="dashboard-card">
+                Recent Savings
 
-            <div class="card-icon inventory">
-
-                <i class="fa-solid fa-boxes-stacked"></i>
-
-            </div>
-
-            <h6>Total Products</h6>
-
-            <h3>
-
-                <span class="counter"
-                      data-target="{{ total_products }}">
-
-                    0
-
-                </span>
-
-            </h3>
-
-        </div>
-
-    </div>
-
-    <div class="col-xl-3 col-md-6 mb-3">
-
-        <div class="dashboard-card">
-
-            <div class="card-icon warning">
-
-                <i class="fa-solid fa-triangle-exclamation"></i>
-
-            </div>
-
-            <h6>Low Stock Items</h6>
-
-            <h3>
-
-                <span class="counter"
-                      data-target="{{ low_stock_count }}">
-
-                    0
-
-                </span>
-
-            </h3>
-
-        </div>
-
-    </div>
-
-    <div class="col-xl-3 col-md-6 mb-3">
-
-        <div class="dashboard-card">
-
-            <div class="card-icon expense">
-
-                <i class="fa-solid fa-circle-xmark"></i>
-
-            </div>
-
-            <h6>Out of Stock</h6>
-
-            <h3>
-
-                <span class="counter"
-                      data-target="{{ out_of_stock_count }}">
-
-                    0
-
-                </span>
-
-            </h3>
-
-        </div>
-
-    </div>
-
-    <div class="col-xl-3 col-md-6 mb-3">
-
-        <div class="dashboard-card">
-
-            <div class="card-icon profit">
-
-                <i class="fa-solid fa-coins"></i>
-
-            </div>
-
-            <h6>Inventory Value</h6>
-
-            <h3>
-
-                Rs.
-
-                <span class="counter"
-                      data-target="{{ inventory_value }}">
-
-                    0
-
-                </span>
-
-            </h3>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="card shadow-sm border-0 mt-3">
-
-    <div class="card-header bg-white d-flex justify-content-between align-items-center">
-
-        <h5>
-
-            <i class="fa-solid fa-boxes-stacked text-primary"></i>
-
-            Inventory Management
-
-        </h5>
-
-        <div>
-
-            <button class="btn btn-success btn-sm">
-
-                <i class="fa-solid fa-plus"></i>
-
-                Add Product
-
-            </button>
-
-            <button class="btn btn-primary btn-sm">
-
-                <i class="fa-solid fa-arrow-down"></i>
-
-                Stock In
-
-            </button>
+            </h5>
 
             <button class="btn btn-warning btn-sm">
 
-                <i class="fa-solid fa-arrow-up"></i>
+                <i class="fa-solid fa-plus"></i>
 
-                Stock Out
+                Add Savings
 
             </button>
 
         </div>
 
-    </div>
+        <div class="card-body">
 
-    <div class="card-body">
+            <div class="table-responsive">
 
-        <div class="row mb-3">
+                <table class="table table-hover align-middle">
 
-            <div class="col-md-6 mb-2">
+                    <thead class="table-warning">
 
-                <input type="text"
-                       class="form-control"
-                       placeholder="Search product...">
+                        <tr>
 
-            </div>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Payment</th>
+                            <th>Amount</th>
 
-            <div class="col-md-3 mb-2">
+                        </tr>
 
-                <select class="form-select">
+                    </thead>
 
-                    <option>All Categories</option>
-                    <option>Grocery</option>
-                    <option>Electronics</option>
-                    <option>Office</option>
-                    <option>Other</option>
+                    <tbody>
 
-                </select>
-
-            </div>
-
-            <div class="col-md-3 mb-2">
-
-                <select class="form-select">
-
-                    <option>All Stock Status</option>
-                    <option>In Stock</option>
-                    <option>Low Stock</option>
-                    <option>Out of Stock</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-        <div class="table-responsive">
-
-            <table class="table table-hover align-middle">
-
-                <thead class="table-primary">
+                    {% for saving in savings_list %}
 
                     <tr>
 
-                        <th>ID</th>
-                        <th>Product Name</th>
-                        <th>Category</th>
-                        <th>Supplier</th>
-                        <th>Purchase Price</th>
-                        <th>Selling Price</th>
-                        <th>Quantity</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <td>{{ saving.date }}</td>
 
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                {% for item in inventory %}
-
-                    <tr>
-
-                        <td>{{ item.id }}</td>
-
-                        <td>{{ item.name }}</td>
-
-                        <td>{{ item.category }}</td>
-
-                        <td>{{ item.supplier }}</td>
+                        <td>{{ saving.description }}</td>
 
                         <td>
 
-                            Rs. {{ item.purchase_price }}
+                            <span class="badge bg-warning text-dark">
+
+                                {{ saving.payment_type }}
+
+                            </span>
 
                         </td>
 
                         <td>
 
-                            Rs. {{ item.selling_price }}
-
-                        </td>
-
-                        <td>{{ item.quantity }}</td>
-
-                        <td>
-
-                            {% if item.quantity == 0 %}
-
-                                <span class="badge bg-danger">
-
-                                    Out of Stock
-
-                                </span>
-
-                            {% elif item.quantity <= 10 %}
-
-                                <span class="badge bg-warning text-dark">
-
-                                    Low Stock
-
-                                </span>
-
-                            {% else %}
-
-                                <span class="badge bg-success">
-
-                                    In Stock
-
-                                </span>
-
-                            {% endif %}
-
-                        </td>
-
-                        <td>
-
-                            <button class="btn btn-sm btn-warning">
-
-                                <i class="fa-solid fa-pen"></i>
-
-                            </button>
-
-                            <button class="btn btn-sm btn-danger">
-
-                                <i class="fa-solid fa-trash"></i>
-
-                            </button>
+                            Rs. {{ saving.amount }}
 
                         </td>
 
                     </tr>
 
-                {% endfor %}
+                    {% endfor %}
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
+
+            </div>
 
         </div>
 
@@ -1139,132 +825,131 @@ Next Part will contain:
 
 </div>
 
+</div>
 
 <!-- ================= Notifications & Recent Activity ================= -->
 
 <div class="row">
 
-    <!-- Notifications -->
+<!-- Notifications -->
 
-    <div class="col-lg-4 mb-4">
+<div class="col-lg-4 mb-4">
 
-        <div class="card shadow-sm border-0">
+    <div class="card shadow-sm border-0">
 
-            <div class="card-header bg-white">
+        <div class="card-header bg-white">
 
-                <h5>
+            <h5>
 
-                    <i class="fa-solid fa-bell text-primary"></i>
+                <i class="fa-solid fa-bell text-primary"></i>
 
-                    Notifications
+                Notifications
 
-                </h5>
+            </h5>
 
-            </div>
+        </div>
 
-            <div class="card-body">
+        <div class="card-body">
 
-                <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush">
 
-                    <li class="list-group-item">
+                <li class="list-group-item">
 
-                        🔔 Budget has reached 80%.
+                    🔔 Budget has reached 80%.
 
-                    </li>
+                </li>
 
-                    <li class="list-group-item">
+                <li class="list-group-item">
 
-                        💰 New sale has been added.
+                    💰 New sale has been added.
 
-                    </li>
+                </li>
 
-                    <li class="list-group-item">
+                <li class="list-group-item">
 
-                        💸 Expense recorded successfully.
+                    💸 Expense recorded successfully.
 
-                    </li>
+                </li>
 
-                    <li class="list-group-item">
+                <li class="list-group-item">
 
-                        🏦 Monthly savings updated.
+                    🏦 Monthly savings updated.
 
-                    </li>
+                </li>
 
-                    <li class="list-group-item">
+                <li class="list-group-item">
 
-                        📄 Monthly report is ready.
+                    📄 Monthly report is ready.
 
-                    </li>
+                </li>
 
-                </ul>
-
-            </div>
+            </ul>
 
         </div>
 
     </div>
 
-    <!-- Recent Activities -->
+</div>
 
-    <div class="col-lg-8 mb-4">
+<!-- Recent Activities -->
 
-        <div class="card shadow-sm border-0">
+<div class="col-lg-8 mb-4">
 
-            <div class="card-header bg-white">
+    <div class="card shadow-sm border-0">
 
-                <h5>
+        <div class="card-header bg-white">
 
-                    <i class="fa-solid fa-clock-rotate-left text-success"></i>
+            <h5>
 
-                    Recent Activities
+                <i class="fa-solid fa-clock-rotate-left text-success"></i>
 
-                </h5>
+                Recent Activities
 
-            </div>
+            </h5>
 
-            <div class="card-body">
+        </div>
 
-                <div class="timeline">
+        <div class="card-body">
 
-                    <div class="mb-3">
+            <div class="timeline">
 
-                        <strong>Today</strong>
+                <div class="mb-3">
 
-                        <p>✔ Sale of Rs. 12,500 added.</p>
+                    <strong>Today</strong>
 
-                    </div>
+                    <p>✔ Sale of Rs. 12,500 added.</p>
 
-                    <div class="mb-3">
+                </div>
 
-                        <strong>Today</strong>
+                <div class="mb-3">
 
-                        <p>✔ Expense of Rs. 3,000 added.</p>
+                    <strong>Today</strong>
 
-                    </div>
+                    <p>✔ Expense of Rs. 3,000 added.</p>
 
-                    <div class="mb-3">
+                </div>
 
-                        <strong>Yesterday</strong>
+                <div class="mb-3">
 
-                        <p>✔ Savings of Rs. 5,000 deposited.</p>
+                    <strong>Yesterday</strong>
 
-                    </div>
+                    <p>✔ Savings of Rs. 5,000 deposited.</p>
 
-                    <div class="mb-3">
+                </div>
 
-                        <strong>Yesterday</strong>
+                <div class="mb-3">
 
-                        <p>✔ Budget updated.</p>
+                    <strong>Yesterday</strong>
 
-                    </div>
+                    <p>✔ Budget updated.</p>
 
-                    <div class="mb-3">
+                </div>
 
-                        <strong>Last Week</strong>
+                <div class="mb-3">
 
-                        <p>✔ Monthly report exported as PDF.</p>
+                    <strong>Last Week</strong>
 
-                    </div>
+                    <p>✔ Monthly report exported as PDF.</p>
 
                 </div>
 
@@ -1273,6 +958,8 @@ Next Part will contain:
         </div>
 
     </div>
+
+</div>
 
 </div>
 
@@ -1280,17 +967,17 @@ Next Part will contain:
 
 <footer class="text-center mt-4 mb-3 text-muted">
 
-    <hr>
+<hr>
 
-    <p>
+<p>
 
-        © 2026 Finance & Inventory Management System
+    © 2026 Finance & Inventory Management System
 
-        <br>
+    <br>
 
-        Developed by Your Team
+    Developed by Your Team
 
-    </p>
+</p>
 
 </footer>
 
