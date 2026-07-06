@@ -50,7 +50,7 @@
      Statement
 </div>
     <div class="nav-item"
-     onclick="showModule('Profile',this)">
+     onclick="showModule('profile',this)">
      Profile
 </div>
  
@@ -317,11 +317,8 @@
 
 
 <section id="budgetModule" class="module">
-    <div
-        class="container"
-        class="budgetCard"
-        style="display:none;">
-      
+<div class="budget-container">
+    <div class="budget-card">
 
       <h2 style="color: rgb(49, 82, 190);">Monthly Budget</h2>
 
@@ -509,16 +506,187 @@
 
     
   <!-- Statement -->
- <section id="statementModule"
-         class="module">
+<section id="statementModule" class="module">
+    <div class="statementHeader"></div>
+    <h2>Financial Statement</h2>
+<br><br>
+    <button id="filterStatementBtn">
 
-<h1>Financial Statement</h1>
+        🔍 Filter
 
-<div id="statementList"></div>
+    </button>
+   <br><br>
+    </div>
+    <div class="statement-filter-card" id="statementFilter" style ="display:none;">
+
+    <h3>Statement Filters</h3>
+
+    <div class="filter-group">
+        <label  style="color: black;">Month</label>
+        <select id="statementMonth">
+            <option value="">All Months</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+    <label  style="color: black;">Year</label>
+    <input
+        type="number"
+        id="statementYear"
+        placeholder="Enter Year (e.g. 2026)"
+        min="2000"
+        max="2100">
+</div>
+
+    <div class="filter-group">
+        <label  style="color: black;">Transaction Type</label>
+        <select id="statementType">
+            <option value="">All</option>
+            <option>Income</option>
+            <option>Expense</option>
+            <option>Saving</option>
+            <option>EMI</option>
+        </select>
+    </div>
+
+    <button id="applyStatementFilter">
+        Apply Filters
+    </button>
+
+</div>
+
+            <table id="statementTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+            <br><br>
+            <div class="statementSummary">
+
+                <h3>Total Income:
+                    <span id="statementIncome">0</span>
+                </h3>
+<br>
+                <h3>Total Expense:
+                    <span id="statementExpense">0</span>
+                </h3>
+                        <br>
+                <h3>Total Savings:
+                    <span id="statementSaving">0</span>
+                </h3>
+                    <br>
+                <h3>Net Cash Flow:
+                    <span id="statementNet">0</span>
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
- 
+
+
+<section id="profileModule" class="module">
+
+<div class="profile-card">
+
+<h2 style="color: black;">My Profile</h2>
+
+<div class="profile-image">
+
+<img
+id="profileImage"
+src="/static/default.png">
+
+</div>
+
+        <h2 id="profileName">Loading...</h2>
+
+        <p id="profileEmail"></p>
+
+    </div>
+
+    <div class="profile-info">
+
+        <div class="info-box">
+            <span>User ID</span>
+            <h4 id="profileUID"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Phone</span>
+            <h4 id="profilePhone"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Gender</span>
+            <h4 id="profileGender"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Date of Birth</span>
+            <h4 id="profileDOB"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Address</span>
+            <h4 id="profileAddress"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Occupation</span>
+            <h4 id="profileOccupation"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Role</span>
+            <h4 id="profileRole"></h4>
+        </div>
+
+        <div class="info-box">
+            <span>Member Since</span>
+            <h4 id="profileJoined"></h4>
+        </div>
+
+    </div>
+
+    <button id="editProfileBtn">
+        Edit Profile
+    </button>
+
+</div>
+
+</section>
 
   <!-- SETTINGS -->
   <section id="settingsModule" class="module">

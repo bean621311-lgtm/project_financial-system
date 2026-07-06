@@ -878,7 +878,308 @@ progress{
     background:#1d4ed8;
 
 }
-#buiness dashboard
+.statement-container{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.statement-card{
+    width:95%;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.statement-card h2{
+    color:#2563eb;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.statement-filters{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.statement-filters input,
+.statement-filters select,
+.statement-filters button{
+    padding:10px;
+    border-radius:8px;
+}
+
+.statement-filters button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#statementTable{
+    width:100%;
+    border-collapse:collapse;
+}
+
+#statementTable th{
+    background:#2563eb;
+    color:white;
+    padding:12px;
+}
+
+#statementTable td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+.statementSummary{
+    margin-top:25px;
+}
+
+.statementSummary h3{
+    margin:8px 0;
+}
+.statementHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.statementFilter{
+
+    display:none;
+
+    margin-bottom:25px;
+
+}
+
+.statementFilter.active{
+
+    display:block;
+
+}
+
+#filterStatementBtn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+.statement-filter-card{
+
+    width:320px;
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    margin:25px auto;
+
+}
+
+.statement-filter-card h3{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#2563eb;
+
+}
+
+.filter-group{
+
+    margin-bottom:18px;
+
+}
+
+.filter-group label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+
+}
+
+.filter-group select{
+
+    width:100%;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+}
+
+.statement-filter-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.statement-filter-card button:hover{
+
+    background:#1d4ed8;
+
+}
+.statement-filter-card input{
+
+    width:100%;
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    background:#ffffff;
+    color:#000000;
+    font-size:15px;
+    box-sizing:border-box;
+
+}
+
+.profile-card{
+
+width:800px;
+
+margin:auto;
+
+background:#fff;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.profile-header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.profile-pic{
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+border:5px solid #2563eb;
+
+object-fit:cover;
+
+margin-bottom:15px;
+
+}
+
+.profile-header h2{
+
+margin:0;
+
+font-size:28px;
+
+color:#222;
+
+}
+
+.profile-header p{
+
+margin-top:6px;
+
+color:#666;
+
+}
+
+.profile-info{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+}
+
+.info-box{
+
+background:#f5f7fb;
+
+padding:15px;
+
+border-radius:12px;
+
+}
+
+.info-box span{
+
+display:block;
+
+font-size:13px;
+
+color:#888;
+
+margin-bottom:6px;
+
+}
+
+.info-box h4{
+
+margin:0;
+
+color:#111;
+
+font-size:18px;
+
+}
+
+#editProfileBtn{
+
+margin-top:30px;
+
+width:100%;
+
+}
 /* ==========================================
         GOOGLE FONT
 ========================================== */
@@ -899,7 +1200,7 @@ body {
     font-family:'Poppins',sans-serif;
 }
 
-body{
+body.dashboard{
 
     background:#f4f7fb;
 

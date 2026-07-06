@@ -122,3 +122,5 @@ def logout():
 def verify(token):
     message = verify_email(token)
     return message
+
+

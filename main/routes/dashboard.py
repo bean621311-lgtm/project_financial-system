@@ -11,7 +11,7 @@ from services.savings_service import add_saving
 from models.savings import Savings
 from services.budget_service import ( create_budget, add_category_budget, get_current_budget )
 from sqlalchemy import func, extract
-from services.statement_service import add_statement
+
 from datetime import datetime
 from models.income import Income
 from models.expense import Expense
@@ -20,9 +20,9 @@ from services.loan_service import (create_loan,
     get_loans,
     get_loan,
     delete_loan,
-    pay_emi
+    pay_emi)
+from services.statement_service import get_statement
 
-)
 dashboard_blueprint = Blueprint( "dashboard",__name__)
 
 @dashboard_blueprint.route("/user_dashboard")
@@ -172,21 +172,6 @@ def get_savings():
         })
 
     return jsonify(data)
-@dashboard_blueprint.route("/add_statement", methods=["POST"])
-def create_statement():
-    if "user_id" not in session:
-        return jsonify({
-            "message": "Login required"
-        }),402
-    add_statement(
-        session["user_id"],
-        request.form["statement_type"],
-        request.form["amount"]
-    )
-
-    return jsonify({
-        "message": "Statement Added"
-    })
 
 @dashboard_blueprint.route("/create_budget", methods=["POST"])
 def create_budget_route():
@@ -402,3 +387,59 @@ def pay_emi_route():
     return jsonify({
         "message": "Payment Failed"
     }), 400
+
+@dashboard_blueprint.route("/get_statement")
+def get_statement_route():
+
+        if "user_id" not in session:
+            return jsonify({
+                "transactions": [],
+                "total_income": 0,
+                "total_expense": 0,
+                "total_saving": 0,
+                "net_cashflow": 0
+            }), 401
+
+        month = request.args.get("month")
+        year = request.args.get("year")
+        transaction_type = request.args.get("type")
+
+        data = get_statement(
+            session["user_id"],
+            month,
+            year,
+            transaction_type
+        )
+
+        return jsonify(data)
+
+@dashboard_blueprint.route("/get_profile")
+def get_profile():
+
+    print("Session:", session)
+    print("User ID:", session.get("user_id"))
+
+    if "user_id" not in session:
+        return jsonify({"message": "Not logged in"}), 401
+
+    user = Users.query.filter_by(
+        user_id=session["user_id"]
+    ).first()
+
+    print("User:", user)
+
+    if user is None:
+        return jsonify({"message": "User not found"}), 404
+
+    return jsonify({
+        "user_id": user.user_id,
+        "name": user.name,
+        "email": user.email,
+        "role": user.role,
+        "phone": user.phone,
+        "gender": user.gender,
+        "dob": user.dob,
+        "address": user.address,
+        "occupation": user.occupation,
+        "joined": user.created_at
+    })

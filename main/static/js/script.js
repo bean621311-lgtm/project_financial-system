@@ -54,14 +54,23 @@ function checkPassword() {
 }
 function showModule(name, element) {
 
+    console.log("Clicked:", name);
+
     document.querySelectorAll(".module")
         .forEach(module => {
             module.classList.remove("active-module");
         });
 
-    document.getElementById(
-        name + "Module"
-    ).classList.add("active-module");
+    let target = document.getElementById(name + "Module");
+
+    console.log("Target:", target);
+
+    if (!target) {
+        console.error("Module not found:", name + "Module");
+        return;
+    }
+
+    target.classList.add("active-module");
 
     document.querySelectorAll(".nav-item")
         .forEach(item => {
@@ -114,8 +123,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
     loadSavingsDropdown();
 
-    loadCurrentBudget();
-
+    
 });
 
 document.getElementById("incomeForm")
@@ -325,8 +333,7 @@ if (budgetForm) {
 
             this.reset();
 
-            loadCurrentBudget();
-
+            
         });
 
     });
@@ -486,6 +493,153 @@ if (emiForm) {
         });
     });
 }
+
+document.getElementById("applyStatementFilter").addEventListener("click", loadStatement);
+
+function loadStatement(){
+
+    let month =
+    document.getElementById("statementMonth").value;
+
+    let year =
+    document.getElementById("statementYear").value;
+
+    let type =
+    document.getElementById("statementType").value;
+
+    fetch(`/get_statement?month=${month}&year=${year}&type=${type}`)
+
+    .then(res=>res.json())
+
+    .then(data=>{
+
+        let tbody =
+        document.querySelector("#statementTable tbody");
+
+        tbody.innerHTML="";
+
+        data.transactions.forEach(t=>{
+
+            tbody.innerHTML +=`
+
+            <tr>
+
+                <td>${t.date}</td>
+
+                <td>${t.type}</td>
+
+                <td>${t.description}</td>
+
+                <td>Rs ${t.amount}</td>
+
+            </tr>
+
+            `;
+
+        });
+
+        document.getElementById("statementIncome").innerHTML=data.total_income;
+
+        document.getElementById("statementExpense").innerHTML=data.total_expense;
+
+        document.getElementById("statementSaving").innerHTML=data.total_saving;
+
+        document.getElementById("statementNet").innerHTML=data.net_cashflow;
+
+    });
+
+}
+document
+.getElementById("filterStatementBtn")
+.onclick = function () {
+
+    const filter = document.getElementById("statementFilter");
+
+    if (filter.style.display === "none" || filter.style.display === "") {
+
+        filter.style.display = "block";
+
+    } else {
+
+        filter.style.display = "none";
+
+    }
+
+};
+    document
+    .getElementById("statementFilter")
+    .classList
+    .toggle("active");
+;
+    // Load current month's statement automatically
+   window.addEventListener("load", function () {
+
+    const today = new Date();
+
+    document.getElementById("statementMonth").value = today.getMonth() + 1;
+
+    document.getElementById("statementYear").value = today.getFullYear();
+
+    loadStatement();
+
+    
+
+});
+
+function showProfileCard(){
+
+    document.getElementById(
+        "loanCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "emiCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "historyCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "profileModule"
+    ).style.display = "block";
+
+    loadProfile();
+
+}
+
+function loadProfile(){
+
+fetch("/get_profile")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+document.getElementById("profileUID").textContent=data.user_id;
+
+document.getElementById("profileName").textContent=data.name;
+
+document.getElementById("profileEmail").textContent=data.email;
+
+document.getElementById("profilePhone").textContent=data.phone || "Not Added";
+
+document.getElementById("profileGender").textContent=data.gender || "Not Added";
+
+document.getElementById("profileDOB").textContent=data.dob || "Not Added";
+
+document.getElementById("profileAddress").textContent=data.address || "Not Added";
+
+document.getElementById("profileOccupation").textContent=data.occupation || "Not Added";
+
+document.getElementById("profileRole").textContent=data.role;
+
+document.getElementById("profileJoined").textContent=
+new Date(data.joined).toLocaleDateString();
+
+});
+}
+
 /*business module*/
 
 
